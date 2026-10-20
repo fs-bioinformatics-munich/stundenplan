@@ -1,0 +1,536 @@
+{
+ "requirements": {
+  "total": 78,
+  "methods": 33,
+  "cs": 15,
+  "bio": 15,
+  "interdisc_min": 3,
+  "interdisc_max": 6
+ },
+ "labels": {
+  "methods": "Methoden und Forschung",
+  "cs": "Informatik, Mathematik und Statistik",
+  "bio": "Biologie/Biochemie/Chemie",
+  "interdisc": "Überfachliche Grundlagen"
+ },
+ "pdf": {
+  "WZ8128": {
+   "cat": "methods",
+   "credits": 5
+  },
+  "WZ8119": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "IN2221": {
+   "cat": "methods",
+   "credits": 8
+  },
+  "IN2230": {
+   "cat": "methods",
+   "credits": 8
+  },
+  "IN5088": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5022": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5020": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5021": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5019": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5116": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5096": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5073": {
+   "cat": "methods",
+   "credits": 12
+  },
+  "IN2379": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "MA5617": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "CIT4230001": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "IN2393": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "PH2019": {
+   "cat": "methods",
+   "credits": 5
+  },
+  "LS20060": {
+   "cat": "methods",
+   "credits": 5
+  },
+  "IN2003": {
+   "cat": "cs",
+   "credits": 8
+  },
+  "IN2004": {
+   "cat": "cs",
+   "credits": 8
+  },
+  "IN2052": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "IN2309": {
+   "cat": "cs",
+   "credits": 8
+  },
+  "IN2026": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "MA3601": {
+   "cat": "cs",
+   "credits": 9
+  },
+  "IN5042": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN5043": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN5085": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2346": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2357": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "IN2375": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2339": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN5176": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN5062": {
+   "cat": "bio",
+   "credits": 6
+  },
+  "IN5065": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "IN5037": {
+   "cat": "bio",
+   "credits": 6
+  },
+  "IN5035": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "IN5036": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "WZ2439": {
+   "cat": "bio",
+   "credits": 6
+  },
+  "WZ2620": {
+   "cat": "bio",
+   "credits": 5
+  },
+  "WZ2375": {
+   "cat": "bio",
+   "credits": 5
+  },
+  "ME2648": {
+   "cat": "bio",
+   "credits": 5
+  },
+  "IN5187": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "ED0038": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "CLA30803": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "CLA21107": {
+   "cat": "interdisc",
+   "credits": 2
+  },
+  "CLA21109": {
+   "cat": "interdisc",
+   "credits": 2
+  },
+  "SOT86062": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "SOT46401": {
+   "cat": "interdisc",
+   "credits": 6
+  },
+  "SOT86060": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "SOT86066": {
+   "cat": "interdisc",
+   "credits": 3
+  }
+ },
+ "web": {
+  "IN2379": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "IN5022": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5020": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5021": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5019": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "MA5617": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "IN5088": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "CIT4230001": {
+   "cat": "methods",
+   "credits": 4
+  },
+  "WZ8097": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "IN5073": {
+   "cat": "methods",
+   "credits": 12
+  },
+  "WZ8096": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "IN2393": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "IN5187": {
+   "cat": "methods",
+   "credits": 3
+  },
+  "WZ8128": {
+   "cat": "methods",
+   "credits": 5
+  },
+  "WZ2621": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "PH2019": {
+   "cat": "methods",
+   "credits": 5
+  },
+  "LS20060": {
+   "cat": "methods",
+   "credits": 5
+  },
+  "IN5116": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN5096": {
+   "cat": "methods",
+   "credits": 9
+  },
+  "IN2221": {
+   "cat": "methods",
+   "credits": 8
+  },
+  "IN2230": {
+   "cat": "methods",
+   "credits": 8
+  },
+  "IN2344": {
+   "cat": "methods",
+   "credits": 5
+  },
+  "WZ0402": {
+   "cat": "methods",
+   "credits": 5
+  },
+  "WZ8119": {
+   "cat": "methods",
+   "credits": 6
+  },
+  "CIT802000": {
+   "cat": "methods",
+   "credits": 3
+  },
+  "IN2309": {
+   "cat": "cs",
+   "credits": 8
+  },
+  "IN5089": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2403": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "IN2408": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "IN5159": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN5030": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2375": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2339": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN5042": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN5043": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN5176": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2003": {
+   "cat": "cs",
+   "credits": 8
+  },
+  "IN2004": {
+   "cat": "cs",
+   "credits": 8
+  },
+  "IN2031": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2078": {
+   "cat": "cs",
+   "credits": 4
+  },
+  "IN2346": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2071": {
+   "cat": "cs",
+   "credits": 4
+  },
+  "IN5075": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2064": {
+   "cat": "cs",
+   "credits": 8
+  },
+  "IN2357": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "IN2323": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "MA3601": {
+   "cat": "cs",
+   "credits": 9
+  },
+  "IN2080": {
+   "cat": "cs",
+   "credits": 4
+  },
+  "IN2361": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "IN5085": {
+   "cat": "cs",
+   "credits": 6
+  },
+  "IN2147": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "IN2052": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "IN2026": {
+   "cat": "cs",
+   "credits": 5
+  },
+  "IN5036": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "WZ2620": {
+   "cat": "bio",
+   "credits": 5
+  },
+  "IN5035": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "IN5128": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "IN5062": {
+   "cat": "bio",
+   "credits": 6
+  },
+  "IN5064": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "IN5065": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "IN5066": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "WZ2693": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "EI7646": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "WZ2048": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "IN5129": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "IN5037": {
+   "cat": "bio",
+   "credits": 6
+  },
+  "WZ2375": {
+   "cat": "bio",
+   "credits": 5
+  },
+  "IN5026": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "CIT803001": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "CIT803000": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "WZ2372": {
+   "cat": "bio",
+   "credits": 5
+  },
+  "WZ1174": {
+   "cat": "bio",
+   "credits": 5
+  },
+  "ME2648": {
+   "cat": "bio",
+   "credits": 5
+  },
+  "IN5056": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "WZ2457": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "WZ2381": {
+   "cat": "bio",
+   "credits": 5
+  },
+  "WZ2580": {
+   "cat": "bio",
+   "credits": 5
+  },
+  "WZ2170": {
+   "cat": "bio",
+   "credits": 3
+  },
+  "WZ2439": {
+   "cat": "bio",
+   "credits": 5
+  }
+ }
+}
