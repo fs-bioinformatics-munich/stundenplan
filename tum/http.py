@@ -9,7 +9,7 @@ RAW = Path(__file__).resolve().parent.parent / "raw"
 DELAY = 0.25
 
 _session = requests.Session()
-_session.headers["User-Agent"] = "stundenplan-personal-scraper/0.1 (tolga.tabanli@bmsl.org)"
+_session.headers["User-Agent"] = "stundenplan-personal-scraper/0.1 (bioinformatik@fs.lmu.de)"
 _last = 0.0
 
 
