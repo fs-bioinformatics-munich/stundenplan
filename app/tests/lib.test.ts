@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { assignLanes, maxLanesPerDay } from '../src/lib/layout';
 import { clashesWith, committedBlocks, conflictKeys, creditsByCatalog, emptyState, groupState, pickGroup, toggleCourse, lecturesWithoutPick, ectsSum } from '../src/lib/selection';
-import { creditNote, creditNotes } from '../src/lib/credits';
+import { catalogConflict, catalogLines, creditNote, creditNotes } from '../src/lib/credits';
 import { gridSlots, oneOffSlots } from '../src/lib/slots';
 import { decodeHash, encodeHash } from '../src/lib/store';
 import type { ScheduleData } from '../src/lib/types';
@@ -47,7 +47,7 @@ const slot = (day: number, start: string, end: string) => ({ day, start, end, ro
 const reg = { open: true, status: 'RUNNING', info: null, url: null };
 const common = { type: 'VO', title: 't', language: null, lecturers: [], registration: reg, course_url: '', modules: ['M1'], credit_module: 'M1', ects: 6, ects_conflict: false, catalog: 'cs' as const };
 
-const mod = { url: '', turnus: null, ects_sources: { pdf: null, handbook: null, web: null }, ects_used_from: 'handbook' as const, ects_conflict: false };
+const mod = { url: '', turnus: null, catalog_sources: { pdf: null, handbook: [], web: null }, catalog_from: null, ects_sources: { pdf: null, handbook: null, web: null }, ects_used_from: 'handbook' as const, ects_conflict: false };
 
 const data: ScheduleData = {
   term: 'T', generated: '', no_dates: [], total_min: 78,
@@ -128,7 +128,7 @@ describe('credit discrepancies', () => {
     const text = creditNote(data.modules.M2);
     expect(text).toContain('ECTS acc. to FPSO 26: 5');
     expect(text).toContain('ECTS acc. to TUM module handbook: 6');
-    expect(text).toContain('ECTS acc. to CIT website (2021 rules): not listed');
+    expect(text).toContain('ECTS acc. to CIT website (FPSO 2026): not listed');
     expect(text).toContain('Counted: 5 (FPSO 26)');
   });
   it('lists discrepancies of the selected courses only, each module once', () => {
@@ -137,6 +137,22 @@ describe('credit discrepancies', () => {
     const n = creditNotes(data, { selected: [1, 2], picks: {} });
     expect(n.map((x) => x.module)).toEqual(['M2']);
     expect(n[0].catalog).toBe('bio');
+  });
+});
+
+describe('catalog sources', () => {
+  const m = { ...data.modules.M2, catalog: 'bio' as const, catalog_from: 'handbook' as const,
+    catalog_sources: { pdf: null, handbook: ['bio' as const], web: 'cs' as const } };
+  it('names every source and marks the one that decided', () => {
+    const lines = catalogLines(m, data);
+    expect(lines.map((l) => [l.label, l.used])).toEqual([
+      ['FPSO published in July 2026', false], ['TUMonline website', true], ['CIT FPSO 2026 website', false]]);
+    expect(lines[0].value).toBe('not listed');
+  });
+  it('flags only real disagreements', () => {
+    expect(catalogConflict(m)).toBe(true);
+    expect(catalogConflict({ ...m, catalog_sources: { pdf: null, handbook: ['bio'], web: 'bio' } })).toBe(false);
+    expect(catalogConflict({ ...m, catalog_sources: { pdf: 'bio', handbook: [], web: null } })).toBe(false);
   });
 });
 

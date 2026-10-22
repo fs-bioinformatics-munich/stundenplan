@@ -4,9 +4,34 @@ import type { AppState } from './selection';
 export const SOURCE_LABELS = {
   pdf: 'ECTS acc. to FPSO 26',
   handbook: 'ECTS acc. to TUM module handbook',
-  web: 'ECTS acc. to CIT website (2021 rules)',
+  web: 'ECTS acc. to CIT website (FPSO 2026)',
 } as const;
 const SOURCE_SHORT = { pdf: 'FPSO 26', handbook: 'TUM module handbook', web: 'CIT website' } as const;
+
+/** How the catalog sources are named next to a module's catalog. */
+export const CATALOG_SOURCE_LABELS = {
+  pdf: 'FPSO published in July 2026',
+  handbook: 'TUMonline website',
+  web: 'CIT FPSO 2026 website',
+} as const;
+
+export interface CatalogLine { source: keyof typeof CATALOG_SOURCE_LABELS; label: string; value: string; used: boolean }
+
+/** One line per source with the catalog it names ("not listed" if absent) and whether it decided. */
+export function catalogLines(m: ModuleInfo, data: ScheduleData): CatalogLine[] {
+  const name = (k: CatalogKey) => data.catalogs[k]?.label ?? k;
+  return (['pdf', 'handbook', 'web'] as const).map((k) => {
+    const v = m.catalog_sources[k];
+    const keys = v === null ? [] : Array.isArray(v) ? v : [v];
+    return { source: k, label: CATALOG_SOURCE_LABELS[k], value: keys.length ? keys.map(name).join(' + ') : 'not listed', used: m.catalog_from === k };
+  });
+}
+
+/** The sources name different catalogs (a "not listed" is not a disagreement). */
+export function catalogConflict(m: ModuleInfo): boolean {
+  const all = [m.catalog_sources.pdf, ...m.catalog_sources.handbook, m.catalog_sources.web].filter((x) => x !== null);
+  return new Set(all).size > 1;
+}
 
 export interface CreditLine { label: string; value: string; counted: boolean }
 

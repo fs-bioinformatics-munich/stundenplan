@@ -46,10 +46,12 @@ try {
   const colours = new Set(await Promise.all(Object.values(byCat).map(colour)));
   check('each catalog has its own colour', colours.size === Object.keys(byCat).length, `${colours.size} colours for ${Object.keys(byCat).join(',')}`);
   const credit = async (k) => (await page.locator(`[data-testid=credit-${k}]`).first().innerText()).replace(/\s+/g, ' ');
-  const flaggedBox = page.locator(`[data-key="c${flagged.id}:0"]`);
-  check('discrepant credits are marked with * on the box', (await flaggedBox.locator('.note-mark').count()) === 1 && /differ between sources/.test(await flaggedBox.locator('.note-mark').getAttribute('title')));
+  // credit discrepancy checks need a lecture whose sources disagree; since the website follows FPSO 2026 there may be none
+  const flaggedBox = flagged ? page.locator(`[data-key="c${flagged.id}:0"]`) : null;
+  if (flagged) check('discrepant credits are marked with * on the box', (await flaggedBox.locator('.note-mark').count()) === 1 && /differ between sources/.test(await flaggedBox.locator('.note-mark').getAttribute('title')));
+  else check('no lecture with credit discrepancy -> no * anywhere', (await page.locator('.note-mark').count()) === 0);
   check('no marker on a box without discrepancy', (await page.locator(`[data-key="c${cit.id}:0"] .note-mark`).count()) === 0);
-  check('legend about * shown when a marked box is visible', (await page.locator('[data-testid=credit-notes]').count()) === 1);
+  check('legend about * matches the visible marked boxes', (await page.locator('[data-testid=credit-notes]').count()) === (flagged ? 1 : 0));
   check('credits panel starts at zero', /0 \/ 33/.test(await credit('methods')) && /0 \/ 15/.test(await credit('cs')), await credit('cs'));
   if (shots) await page.screenshot({ path: `${shots}/1-main.png` });
 
@@ -74,21 +76,25 @@ try {
   const single = page.locator('[data-testid=single-dates]');
   await single.waitFor();
   check('popup lists the single date', /2027-02-03/.test(await single.innerText()), (await single.innerText()).replace(/\n/g, ' ').slice(0, 100));
+  const catLine = await page.locator('[data-testid=catalog-line]').first().innerText();
+  check('popup names the catalog and its source', /^Catalog: .+ · (FPSO published in July 2026|TUMonline website|CIT FPSO 2026 website)/.test(catLine), catLine);
   await page.keyboard.press('Escape');
 
-  // popup of the flagged lecture explains the discrepancy
-  await flaggedBox.locator('.box-title').click();
-  const note = page.locator('[data-testid=ects-note]');
-  await note.waitFor();
-  check('popup lists the sources by their new labels', /ECTS acc\. to FPSO 26: /.test(await note.innerText()) && /ECTS acc\. to TUM module handbook: /.test(await note.innerText()) && /counted/.test(await note.innerText()), (await note.innerText()).replace(/\n/g, ' '));
-  await page.keyboard.press('Escape');
-  // selecting it puts a footnote into the credits panel
-  await flaggedBox.locator('.box-check').check();
-  const foot = await page.locator('[data-testid=credit-notes]').innerText();
-  check('credits footnote names the module', foot.includes(flagged.credit_module) && /differ between sources/.test(foot), foot.replace(/\n/g, ' ').slice(0, 120));
-  check('catalog row carries a *', (await page.locator(`[data-testid=credit-${flagged.catalog}] .note-mark`).count()) === 1);
-  await flaggedBox.locator('.box-check').uncheck();
-  check('footnote disappears when deselected (only legend left)', !(await page.locator('[data-testid=credit-notes]').innerText()).includes(flagged.credit_module));
+  if (flagged) {
+    // popup of the flagged lecture explains the discrepancy
+    await flaggedBox.locator('.box-title').click();
+    const note = page.locator('[data-testid=ects-note]');
+    await note.waitFor();
+    check('popup lists the sources by their new labels', /ECTS acc\. to FPSO 26: /.test(await note.innerText()) && /ECTS acc\. to TUM module handbook: /.test(await note.innerText()) && /counted/.test(await note.innerText()), (await note.innerText()).replace(/\n/g, ' '));
+    await page.keyboard.press('Escape');
+    // selecting it puts a footnote into the credits panel
+    await flaggedBox.locator('.box-check').check();
+    const foot = await page.locator('[data-testid=credit-notes]').innerText();
+    check('credits footnote names the module', foot.includes(flagged.credit_module) && /differ between sources/.test(foot), foot.replace(/\n/g, ' ').slice(0, 120));
+    check('catalog row carries a *', (await page.locator(`[data-testid=credit-${flagged.catalog}] .note-mark`).count()) === 1);
+    await flaggedBox.locator('.box-check').uncheck();
+    check('footnote disappears when deselected (only legend left)', !(await page.locator('[data-testid=credit-notes]').innerText()).includes(flagged.credit_module));
+  }
 
   // popup via click, checkbox does not open it
   await page.locator(`[data-key="c${cit.id}:0"] .box-check`).check();

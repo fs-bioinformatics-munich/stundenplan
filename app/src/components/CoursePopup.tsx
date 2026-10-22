@@ -2,7 +2,7 @@ import { useEffect } from 'preact/hooks';
 import type { Course, Exercise, ScheduleData, Slot } from '../lib/types';
 import { DAY_NAMES, fmtRange } from '../lib/time';
 import { exercisesOf } from '../lib/selection';
-import { creditLines } from '../lib/credits';
+import { catalogConflict, catalogLines, CATALOG_SOURCE_LABELS, creditLines } from '../lib/credits';
 import { gridSlots, oneOffSlots } from '../lib/slots';
 
 export type Opened = { kind: 'course' | 'exercise'; id: number } | null;
@@ -52,6 +52,14 @@ export function CoursePopup({ data, opened, onClose }: { data: ScheduleData; ope
                     {m} {data.modules[m]?.name}{data.modules[m]?.ects ? ` · ${data.modules[m].ects} ECTS` : ''}
                     {data.modules[m]?.ects_conflict && <span class="note-mark">*</span>}
                     {data.modules[m]?.turnus ? ` · ${data.modules[m].turnus}` : ''}
+                    {data.modules[m]?.catalog_from && (
+                      <div class="catalog-line" data-testid="catalog-line">
+                        Catalog: <strong>{data.catalogs[data.modules[m].catalog!]?.label}</strong> · {CATALOG_SOURCE_LABELS[data.modules[m].catalog_from!]}
+                        {catalogConflict(data.modules[m]) && (
+                          <span class="warn" data-testid="catalog-conflict"> · sources differ: {catalogLines(data.modules[m], data).map((l) => `${l.label}: ${l.value}`).join('; ')}</span>
+                        )}
+                      </div>
+                    )}
                     {data.modules[m]?.ects_conflict && (
                       <div class="ects-note" data-testid="ects-note">
                         <span class="note-mark">*</span> <strong>Credits differ between sources</strong>

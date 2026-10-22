@@ -53,6 +53,8 @@ export interface ModuleInfo {
   url: string;
   turnus: string | null;
   catalog: CatalogKey | null;
+  catalog_sources: { pdf: CatalogKey | null; handbook: CatalogKey[]; web: CatalogKey | null };
+  catalog_from: 'pdf' | 'handbook' | 'web' | null;
   ects_sources: { pdf: number | null; handbook: number | null; web: number | null };
   ects_used_from: 'pdf' | 'handbook' | 'web' | null;
   ects_conflict: boolean; // the sources disagree on the credits: must be shown wherever credits are

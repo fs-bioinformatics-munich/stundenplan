@@ -64,7 +64,11 @@ def main(out):
                         "ects": used, "ects_sources": sources, "ects_used_from": used_from,
                         # sources that disagree: always shown in the UI (boxes, popup, credits footnote)
                         "ects_conflict": len({v for v in sources.values() if v is not None}) > 1,
-                        "catalog": catalogs.resolve(mid, hb, cat_src["pdf"], cat_src["web"])}
+                        "catalog": catalogs.resolve(mid, hb, cat_src["pdf"], cat_src["web"]),
+                        # catalog per source (handbook: every [20261] path of the module), shown in the popup
+                        "catalog_sources": {"pdf": cat_src["pdf"].get(mid, {}).get("cat"), "handbook": hb,
+                                            "web": cat_src["web"].get(mid, {}).get("cat")},
+                        "catalog_from": catalogs.resolve_source(mid, hb, cat_src["pdf"], cat_src["web"])}
     mods_of, courses_of = {}, {}
     for r in con.execute("SELECT module_id, course_id FROM module_course"):
         mods_of.setdefault(r["course_id"], []).append(r["module_id"])
