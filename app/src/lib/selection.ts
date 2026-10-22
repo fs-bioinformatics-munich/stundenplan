@@ -5,15 +5,21 @@ import { gridSlots } from './slots';
 export interface AppState {
   selected: number[]; // course ids
   picks: Record<number, string>; // exercise id -> chosen group name
+  modules: string[]; // selected CIT modules without a TUMonline course (module numbers)
 }
 
-export const emptyState = (): AppState => ({ selected: [], picks: {} });
+export const emptyState = (): AppState => ({ selected: [], picks: {}, modules: [] });
 
 export type GroupState = 'free' | 'chosen' | 'disabled';
 
 export function toggleCourse(state: AppState, id: number): AppState {
   const selected = state.selected.includes(id) ? state.selected.filter((x) => x !== id) : [...state.selected, id];
   return { ...state, selected };
+}
+
+export function toggleCitModule(state: AppState, id: string): AppState {
+  const modules = state.modules.includes(id) ? state.modules.filter((x) => x !== id) : [...state.modules, id];
+  return { ...state, modules };
 }
 
 /** Picking a group chooses it; picking the chosen group again releases the choice. */
@@ -92,7 +98,8 @@ export interface Credits {
   total: number; // the four catalogs together (what counts towards the elective minimum)
 }
 
-/** Credits of the selected courses per catalog. Each module counts once, through the course's credit_module. */
+/** Credits of the selected courses and CIT modules per catalog. Each module counts once: through the course's
+ * credit_module, and a CIT module is skipped when a selected course already carries the credits of that module. */
 export function creditsByCatalog(data: ScheduleData, state: AppState): Credits {
   const selected = new Set(state.selected);
   const seen = new Set<string>();
@@ -103,6 +110,12 @@ export function creditsByCatalog(data: ScheduleData, state: AppState): Credits {
     const ects = data.modules[c.credit_module]?.ects ?? 0;
     out[c.catalog ?? 'other'] += ects;
     if (c.catalog) out.total += ects;
+  }
+  for (const m of data.cit_modules) {
+    if (!state.modules.includes(m.id) || seen.has(m.id)) continue;
+    seen.add(m.id);
+    out[m.catalog ?? 'other'] += m.credits;
+    if (m.catalog) out.total += m.credits;
   }
   return out;
 }

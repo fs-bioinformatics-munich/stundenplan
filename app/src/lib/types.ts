@@ -60,6 +60,28 @@ export interface ModuleInfo {
   ects_conflict: boolean; // the sources disagree on the credits: must be shown wherever credits are
 }
 
+/** A module of the CIT Modulkatalog that only has a module description PDF; selectable although it has no timetable. */
+export interface CitModule {
+  id: string;
+  name: string;
+  catalog: CatalogKey | null;
+  credits: number; // the credits that count
+  credits_used_from: 'pdf' | 'handbook' | 'web' | 'module_pdf' | 'manual' | null;
+  credits_sources: { pdf: number | null; handbook: number | null; web: number | null; module_pdf: number | null };
+  credits_conflict: boolean;
+  title: string | null;
+  type: string | null;
+  teaching_form: string | null;
+  language: string | null;
+  level: string | null;
+  turnus: string | null;
+  lecturers: string[];
+  responsible: string | null;
+  workload: { presence: number | null; self: number | null; total: number | null };
+  pdf_url: string;
+  manual_fields: string[]; // fields corrected by hand in data/cit_modules_manual.json
+}
+
 export interface CatalogInfo { label: string; min: number; max?: number }
 
 export interface ScheduleData {
@@ -70,5 +92,6 @@ export interface ScheduleData {
   modules: Record<string, ModuleInfo>;
   courses: Course[];
   exercises: Exercise[];
+  cit_modules: CitModule[];
   no_dates: number[];
 }

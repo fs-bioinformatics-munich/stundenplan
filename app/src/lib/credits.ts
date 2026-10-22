@@ -1,4 +1,4 @@
-import type { CatalogKey, ModuleInfo, ScheduleData } from './types';
+import type { CatalogKey, CitModule, ModuleInfo, ScheduleData } from './types';
 import type { AppState } from './selection';
 
 export const SOURCE_LABELS = {
@@ -6,7 +6,8 @@ export const SOURCE_LABELS = {
   handbook: 'ECTS acc. to TUM module handbook',
   web: 'ECTS acc. to CIT website (FPSO 2026)',
 } as const;
-const SOURCE_SHORT = { pdf: 'FPSO 26', handbook: 'TUM module handbook', web: 'CIT website' } as const;
+const SOURCE_SHORT = { pdf: 'FPSO 26', handbook: 'TUM module handbook', web: 'CIT website', module_pdf: 'CIT module description', manual: 'hand correction' } as const;
+const MODULE_PDF_LABEL = 'ECTS acc. to CIT module description (PDF)';
 
 /** How the catalog sources are named next to a module's catalog. */
 export const CATALOG_SOURCE_LABELS = {
@@ -51,6 +52,15 @@ export function creditNote(m: ModuleInfo): string {
   return `Credits differ between sources: ${lines}. Counted: ${m.ects ?? '?'} (${from}).`;
 }
 
+/** Credit note of a CIT module whose sources (including its description PDF) disagree. */
+export function citCreditNote(m: CitModule): string {
+  const s = m.credits_sources;
+  const v = (x: number | null) => (x === null ? 'not listed' : String(x));
+  const lines = [`${SOURCE_LABELS.pdf}: ${v(s.pdf)}`, `${SOURCE_LABELS.handbook}: ${v(s.handbook)}`, `${SOURCE_LABELS.web}: ${v(s.web)}`, `${MODULE_PDF_LABEL}: ${v(s.module_pdf)}`];
+  const from = m.credits_used_from ? SOURCE_SHORT[m.credits_used_from] : 'no source';
+  return `Credits differ between sources: ${lines.join('; ')}. Counted: ${m.credits} (${from}).`;
+}
+
 export interface CreditNote { module: string; name: string; text: string; catalog: CatalogKey | null }
 
 /** Credit discrepancies of the selected courses (each module once). */
@@ -63,6 +73,11 @@ export function creditNotes(data: ScheduleData, state: AppState): CreditNote[] {
     if (!selected.has(c.id) || !c.credit_module || !m?.ects_conflict || seen.has(c.credit_module)) continue;
     seen.add(c.credit_module);
     notes.push({ module: c.credit_module, name: m.name, text: creditNote(m), catalog: c.catalog });
+  }
+  for (const m of data.cit_modules) {
+    if (!state.modules.includes(m.id) || !m.credits_conflict || seen.has(m.id)) continue;
+    seen.add(m.id);
+    notes.push({ module: m.id, name: m.name, text: citCreditNote(m), catalog: m.catalog });
   }
   return notes;
 }

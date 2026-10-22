@@ -17,13 +17,14 @@ export const defaultFilters = (): Filters => ({
   query: '',
 });
 
-/** #v=schedule&l=1,2&e=3:Group%2010;4:Group%202&x=1 */
+/** #v=schedule&l=1,2&m=IN5022,CIT802000&e=3:Group%2010;4:Group%202&x=1 */
 export function encodeHash(h: HashState): string {
   const p = new URLSearchParams();
   p.set('v', h.view);
   if (h.state.selected.length) p.set('l', h.state.selected.join(','));
   const picks = Object.entries(h.state.picks).map(([id, g]) => `${id}:${g}`);
   if (picks.length) p.set('e', picks.join(';'));
+  if (h.state.modules.length) p.set('m', h.state.modules.join(','));
   if (h.showExercises) p.set('x', '1');
   return '#' + p.toString();
 }
@@ -32,6 +33,7 @@ export function decodeHash(hash: string): HashState {
   const p = new URLSearchParams(hash.replace(/^#/, ''));
   const state = emptyState();
   state.selected = (p.get('l') ?? '').split(',').map(Number).filter((n) => Number.isInteger(n) && n > 0);
+  state.modules = (p.get('m') ?? '').split(',').filter((id) => /^[A-Za-z0-9_-]{2,24}$/.test(id));
   for (const part of (p.get('e') ?? '').split(';')) {
     const i = part.indexOf(':');
     const id = Number(part.slice(0, i));

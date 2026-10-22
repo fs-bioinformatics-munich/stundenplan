@@ -285,3 +285,23 @@ When the sources name different catalogs, the line continues in red with one ent
 ## Correction (2026-10-21): fresh handbook data
 
 The IN5128 catalog conflict and the "website vs handbook precedence" question noted above came from a stale handbook cache; after refetching, handbook and website agree (IN5128: Informatik, Mathematik und Statistik, all catalog sources consistent). The only remaining source difference is the WZ2439 credits (no course in WS 26/27, so no `*` visible). Catalog count of lectures: bio 6, methods 7, cs 10, interdisc 1, no catalog 2 (Proteomics WZ2170 lost its catalog; see `plan_data_scraper.md`, "Correction: handbook pages were stale"). Unit tests 25 and e2e pass.
+
+## Update: exercises in the main view (2026-10-22)
+
+- The **Show exercises / Hide exercises** button moved to the type row of the main view, directly right of the "Lectures (VO, VI)" chip (`MainView.tsx`). It stays in the schedule view as well; both buttons toggle the same state (`showExercises`, also stored in the URL hash as `x=1`), so the effect carries over in both directions.
+- **Assumption (not confirmed by the owner):** the toggle shows the exercises of the **selected** lectures only (as in the schedule view), not of every lecture on screen. Reasons: an exercise belongs to a lecture, picking a group needs a lecture in the plan, and all lectures at once would add about 35 boxes. The button is disabled (tooltip: "Select a lecture that has exercises first") while no selected lecture has an exercise. Lectures hidden by a filter keep their exercises visible while selected.
+- Groups can be picked in the main view with the checkbox of the exercise box; the other groups of that exercise grey out, "would clash" outlines and conflict markers work as in the schedule view. The pending-groups list and the chosen-groups list stay in the schedule summary only.
+- The box building of exercises is shared by both views (`app/src/components/exerciseBoxes.ts`).
+- Tests: e2e checks position of the button, disabled state, box count in the main view, picking a group, and that the exercises stay visible when switching views (unit tests 25 pass, e2e all checks pass).
+- Earlier "stale button" report: the schedule view worked; the problem was a button state, not a data or layout bug.
+
+## Update: CIT modules without TUMonline course (2026-10-22)
+
+Decisions of the owner: all 22 PDF modules are included; they are selectable like courses regardless of dates; selecting one counts its credits in its catalog (standard behaviour).
+- **List below the grid** (main view), under the "No dates published yet" list: "Modules from the CIT catalog without TUMonline course (22)". Per module a checkbox, the catalog colour, the name (opens a popup), module number and credits; `*` with tooltip when credit sources disagree. The search box filters it by name, number and lecturer; the type/registration filters do not apply.
+- **Selection state:** `AppState.modules` (module numbers); stored in `localStorage` and the URL hash (`m=IN5022,CIT802000`, ids validated on decode). The counter and the Create schedule button include them (a plan with only such modules is possible).
+- **Credits:** `creditsByCatalog` adds the credits of the selected modules to their catalog; a module counts once when a selected course already carries its credits (`credit_module`), in either order. Credit discrepancies (FPSO, handbook, website table, description PDF) appear in the credits footnote like the existing ones (`citCreditNote`); the module description PDF is labelled "ECTS acc. to CIT module description (PDF)".
+- **Popup** (`CitModulePopup.tsx`): catalog, credits and where they come from, type, teaching form, language, level, workload, turnus, responsible, lecturers, link to the PDF; fields corrected by hand are marked "(hand-corrected)".
+- **Schedule view:** the summary lists the selected modules under "Modules without dates" (deselectable) and the course count says "+ N without dates"; the credits panel already includes them.
+- **Not done:** the raw PDF text (outcomes, contents, literature) is not shown; modules are not marked on the week grid (no dates); the PDFs are shown only through the link to cit.tum.de, the local copies are for checking.
+- Tests: 34 unit tests (selection, credits dedupe, notes, hash round trip, junk ids) and e2e checks (list size, select, counter, credits in catalog, popup, reload, schedule summary, deselect, search).

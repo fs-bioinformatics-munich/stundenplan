@@ -159,6 +159,57 @@ try {
   // back keeps selection
   await page.locator('[data-testid=back]').click();
   check('selection kept when going back', (await page.locator('[data-testid=counter]').textContent()).startsWith('2 '));
+
+  // exercises in the main view (toggle next to the Lectures chip), effect carries over to the schedule view
+  const exLecture = lectures.find((c) => c.slots.length && data.exercises.some((e) => e.lecture_ids.includes(c.id) && (e.fixed_slots.length || e.groups.some((g) => g.slots.length))));
+  const exBtn = page.locator('[data-testid=show-exercises]');
+  const nextToLectures = await page.locator('[data-testid=types] label', { hasText: 'Lectures' }).evaluate((l) => l.nextElementSibling?.getAttribute('data-testid'));
+  check('exercise button sits next to the Lectures chip', nextToLectures === 'show-exercises', String(nextToLectures));
+  await page.evaluate(() => { location.hash = '#v=main'; });
+  await page.reload();
+  check('exercise button disabled with nothing selected', await exBtn.isDisabled());
+  await page.locator(`.box[data-key^="c${exLecture.id}:"] .box-check`).first().check();
+  check('exercise button enabled after selecting a lecture with exercises', await exBtn.isEnabled());
+  check('no exercise boxes before the toggle', (await page.locator('.box[data-key^="g"], .box[data-key^="f"]').count()) === 0);
+  await exBtn.click();
+  const exMain = await page.locator('.box[data-key^="g"], .box[data-key^="f"]').count();
+  const exExpected = data.exercises.filter((e) => e.lecture_ids.includes(exLecture.id)).reduce((n, e) => n + e.fixed_slots.length + e.groups.reduce((m, g) => m + g.slots.length, 0), 0);
+  check('main view shows the exercises of the selected lecture', exMain === exExpected && exMain > 0, `${exMain} vs ${exExpected}`);
+  const grp = page.locator('.box[data-key^="g"] .box-check').first();
+  if (await grp.count()) { await grp.check(); check('a group can be picked in the main view', (await page.locator('.box[data-key^="g"] .box-check:checked').count()) === 1); await grp.uncheck(); }
+  await page.locator('[data-testid=create]').click();
+  check('exercises stay visible in the schedule view', (await page.locator('.box[data-key^="g"], .box[data-key^="f"]').count()) === exExpected);
+  await page.locator('[data-testid=back]').click();
+  check('and in the main view again', (await page.locator('.box[data-key^="g"], .box[data-key^="f"]').count()) === exExpected);
+
+  // CIT modules without TUMonline course: listed below the grid, selectable, counted in the credits, details from the PDF
+  const citList = page.locator('[data-testid=cit-modules] li');
+  check('CIT modules are listed below the grid', (await citList.count()) === data.cit_modules.length && data.cit_modules.length > 0, `${await citList.count()}`);
+  await page.evaluate(() => { location.hash = '#v=main'; });
+  await page.reload();
+  const citMod = data.cit_modules.find((m) => m.id === 'CIT802000') ?? data.cit_modules[0];
+  const catBefore = await page.locator(`[data-testid=credit-${citMod.catalog}]`).first().innerText();
+  await page.locator(`[data-testid=cit-${citMod.id}] input`).check();
+  check('counter includes the module', (await page.locator('[data-testid=counter]').textContent()).startsWith('1 '));
+  check('create schedule enabled with only a module selected', await page.locator('[data-testid=create]').isEnabled());
+  const catAfter = await page.locator(`[data-testid=credit-${citMod.catalog}]`).first().innerText();
+  check('its credits count in its catalog', catBefore.replace(/\s+/g, ' ').includes(' 0 / ') && catAfter.replace(/\s+/g, ' ').includes(` ${citMod.credits} / `), `${catBefore.replace(/\s+/g, ' ')} -> ${catAfter.replace(/\s+/g, ' ')}`);
+  await page.locator(`[data-testid=cit-${citMod.id}] a`).click();
+  const citPopup = page.locator('[data-testid=cit-popup]');
+  await citPopup.waitFor();
+  const popupText = await citPopup.innerText();
+  check('module popup shows credits, type and the PDF link', popupText.includes(`${citMod.credits} ECTS`) && popupText.includes(citMod.type) && (await citPopup.locator('a[href$=".pdf"]').count()) === 1, popupText.replace(/\n/g, ' ').slice(0, 120));
+  await page.keyboard.press('Escape');
+  await page.reload();
+  check('selected module survives a reload', await page.locator(`[data-testid=cit-${citMod.id}] input`).isChecked());
+  await page.locator('[data-testid=create]').click();
+  check('schedule view lists the selected module', (await page.locator('[data-testid=cit-selected] li').count()) === 1);
+  await page.locator('[data-testid=back]').click();
+  await page.locator(`[data-testid=cit-${citMod.id}] input`).uncheck();
+  check('deselecting takes the credits away again', (await page.locator(`[data-testid=credit-${citMod.catalog}]`).first().innerText()) === catBefore);
+  await page.locator('input[type=search]').fill('Zimmer');
+  const filtered = await citList.count();
+  check('search filters the module list by lecturer', filtered > 0 && filtered < data.cit_modules.length, `${filtered}`);
 } finally {
   await browser.close();
   server.kill();

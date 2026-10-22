@@ -11,11 +11,14 @@ from datetime import datetime
 from pathlib import Path
 
 from tum import catalog as catalogs
+from tum import cit_modules
 from tum.db import DB_PATH
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "app" / "public" / "data" / "schedule.json"
 CATALOG_JSON = ROOT / "data" / "modulkatalog.json"   # made by build_catalog.py
+CIT_MODULES_JSON = ROOT / "data" / "cit_modules.json"   # made by build_cit_modules.py
+CIT_MODULES_MANUAL = ROOT / "data" / "cit_modules_manual.json"
 TERM = "WS 2026/27"
 LANGUAGE_ORG = "TUZEIO2"          # language centre: its courses get category "language"
 WEEKDAYS = {"Montag": 1, "Dienstag": 2, "Mittwoch": 3, "Donnerstag": 4, "Freitag": 5, "Samstag": 6, "Sonntag": 7}
@@ -148,10 +151,15 @@ def main(out):
     catalog_info = {k: {"label": catalogs.LABELS[k], "min": req.get(k)} for k in ("methods", "cs", "bio")}
     catalog_info["interdisc"] = {"label": catalogs.LABELS["interdisc"], "min": req.get("interdisc_min"), "max": req.get("interdisc_max")}
     assert all(v["min"] is not None for v in catalog_info.values()), f"missing credit minimum in {req}"
+    cit = []
+    if CIT_MODULES_JSON.exists():
+        manual = json.loads(CIT_MODULES_MANUAL.read_text(encoding="utf-8")) if CIT_MODULES_MANUAL.exists() else {}
+        cit = cit_modules.export_records(cit_modules.merge_manual(json.loads(CIT_MODULES_JSON.read_text(encoding="utf-8")), manual), modules)
+        assert all(r["catalog"] in catalog_info for r in cit), "CIT module with unknown catalog"
     data = {"term": TERM, "generated": datetime.now().isoformat(timespec="seconds"),
             "catalogs": catalog_info, "total_min": req["total"],
             "modules": {k: {kk: vv for kk, vv in v.items() if kk != "org"} for k, v in modules.items()},
-            "courses": courses, "exercises": exercises, "no_dates": no_dates}
+            "courses": courses, "exercises": exercises, "no_dates": no_dates, "cit_modules": cit}
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     cats = {}
@@ -165,6 +173,8 @@ def main(out):
     print(f"lectures by catalog: {by_cat}")
     conflicts = {m: v["ects_sources"] for m, v in modules.items() if v["ects_conflict"]}
     print(f"modules with credit discrepancies between sources: {conflicts}")
+    print(f"CIT module descriptions: {len(cit)}; credit discrepancies: {[r['id'] for r in cit if r['credits_conflict']]}; "
+          f"with hand corrections: {[r['id'] for r in cit if r['manual_fields']]}")
 
 
 if __name__ == "__main__":

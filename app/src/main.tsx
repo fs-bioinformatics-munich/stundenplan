@@ -2,12 +2,13 @@ import { render } from 'preact';
 import { useCallback, useEffect, useLayoutEffect, useState } from 'preact/hooks';
 import './style.css';
 import type { ScheduleData } from './lib/types';
-import { emptyState, pickGroup, toggleCourse, type AppState } from './lib/selection';
+import { emptyState, pickGroup, toggleCitModule, toggleCourse, type AppState } from './lib/selection';
 import { decodeHash, defaultFilters, encodeHash, loadSaved, save, type Filters, type View } from './lib/store';
 import { MainView } from './components/MainView';
 import { ScheduleView } from './components/ScheduleView';
 import { SOURCES } from './config';
 import { Footer } from './components/Footer';
+import { CitModulePopup } from './components/CitModulePopup';
 import { CoursePopup, type Opened } from './components/CoursePopup';
 
 function initial() {
@@ -29,6 +30,7 @@ function App({ data }: { data: ScheduleData }) {
   const [showExercises, setShowExercises] = useState(init.showExercises);
   const [filters, setFilters] = useState<Filters>(init.filters);
   const [opened, setOpened] = useState<Opened>(null);
+  const [openedCit, setOpenedCit] = useState<string | null>(null);
 
   // keep localStorage and the URL hash in sync with the state; a layout effect runs right after the
   // commit (useEffect would wait for the next paint, so a quick reload could lose the last change)
@@ -47,6 +49,8 @@ function App({ data }: { data: ScheduleData }) {
   }, []);
 
   const onClose = useCallback(() => setOpened(null), []);
+  const onCloseCit = useCallback(() => setOpenedCit(null), []);
+  const toggleCit = (id: string) => setState((s) => toggleCitModule(s, id));
   const toggle = (id: number) => setState((s) => toggleCourse(s, id));
 
   return (
@@ -62,17 +66,22 @@ function App({ data }: { data: ScheduleData }) {
         <MainView
           data={data} state={state} filters={filters} setFilters={setFilters}
           onToggle={toggle} onOpen={(id) => setOpened({ kind: 'course', id })} onCreate={() => setView('schedule')}
+          onToggleCit={toggleCit} onOpenCit={setOpenedCit}
+          showExercises={showExercises} setShowExercises={setShowExercises}
+          onOpenExercise={(id) => setOpened({ kind: 'exercise', id })} onPick={(e, g) => setState((s) => pickGroup(s, e, g))}
         />
       ) : (
         <ScheduleView
           data={data} state={state} showExercises={showExercises} setShowExercises={setShowExercises}
           onToggle={toggle} onPick={(e, g) => setState((s) => pickGroup(s, e, g))}
           onOpenCourse={(id) => setOpened({ kind: 'course', id })} onOpenExercise={(id) => setOpened({ kind: 'exercise', id })}
+          onToggleCit={toggleCit} onOpenCit={setOpenedCit}
           onBack={() => setView('main')}
         />
       )}
       <Footer />
       <CoursePopup data={data} opened={opened} onClose={onClose} />
+      <CitModulePopup data={data} id={openedCit} onClose={onCloseCit} />
     </div>
   );
 }

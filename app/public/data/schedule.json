@@ -1,6 +1,6 @@
 {
  "term": "WS 2026/27",
- "generated": "2026-10-21T14:32:38",
+ "generated": "2026-10-22T22:06:06",
  "catalogs": {
   "methods": {
    "label": "Methoden und Forschung",
@@ -13867,5 +13867,733 @@
   950943775,
   950944871,
   950945793
+ ],
+ "cit_modules": [
+  {
+   "module_id": "IN5022",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5022_W_AlgorithmenAufSequenzen.pdf",
+   "pdf_file": "data/cit_modules/IN5022.pdf",
+   "title": "Algorithms on Sequences",
+   "type": "Vorlesung mit Übungen",
+   "credits": 9,
+   "teaching_form": "4V + 2Ü",
+   "language": "Deutsch",
+   "level": "Master",
+   "workload": {
+    "presence": 90,
+    "self": 180,
+    "total": 270
+   },
+   "turnus": "unregelmäßig",
+   "responsible": "Prof. Dr. Volker Heun",
+   "lecturers": [
+    "Prof. Dr. Volker Heun"
+   ],
+   "manual_fields": [],
+   "id": "IN5022",
+   "name": "Algorithmen auf Sequenzen",
+   "catalog": "methods",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 9,
+    "handbook": 9,
+    "web": 9,
+    "module_pdf": 9
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5020",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5020_W_AlgoBioinfBaeumeUndGraphen.pdf",
+   "pdf_file": "data/cit_modules/IN5020.pdf",
+   "title": "Algorithmic Bioinformatics: Trees and Graphs",
+   "type": "Vorlesung mit Übungen",
+   "credits": 9,
+   "teaching_form": "4V + 2Ü",
+   "language": "Deutsch",
+   "level": "Master",
+   "workload": {
+    "presence": 90,
+    "self": 180,
+    "total": 270
+   },
+   "turnus": "unregelmäßig",
+   "responsible": "Prof. Dr. Volker Heun",
+   "lecturers": [
+    "Prof. Dr. Volker Heun"
+   ],
+   "manual_fields": [],
+   "id": "IN5020",
+   "name": "Algorithmische Bioinformatik: Bäume und Graphen",
+   "catalog": "methods",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 9,
+    "handbook": 9,
+    "web": 9,
+    "module_pdf": 9
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5021",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5021_AlgoBioinfNetzGraphundSyst.pdf",
+   "pdf_file": "data/cit_modules/IN5021.pdf",
+   "title": "Algorithmic Bioinformatics: Networks, Graphs and Systems",
+   "type": "Vorlesung mit Übungen",
+   "credits": 9,
+   "teaching_form": "4V + 2Ü",
+   "language": "Deutsch/Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 90,
+    "self": 180,
+    "total": 270
+   },
+   "turnus": "Sommersemester",
+   "responsible": "Prof. Dr. Ralf Zimmer",
+   "lecturers": [
+    "Prof. Dr. Ralf Zimmer Prof. Dr. Caroline Friedel"
+   ],
+   "manual_fields": [],
+   "id": "IN5021",
+   "name": "Algorithmische Bioinformatik: Systeme und Netzwerke",
+   "catalog": "methods",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 9,
+    "handbook": 9,
+    "web": 9,
+    "module_pdf": 9
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5019",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5019_W_AlgoBioinfSystembiologie.pdf",
+   "pdf_file": "data/cit_modules/IN5019.pdf",
+   "title": "Algorithmic Systems Biology",
+   "type": "Vorlesung mit Übungen",
+   "credits": 9,
+   "teaching_form": "4V + 2Ü",
+   "language": "Deutsch oder Englisch (wird vom Dozenten zum Vorlesungsbeginn bekannt gegeben)",
+   "level": "Master",
+   "workload": {
+    "presence": 90,
+    "self": 180,
+    "total": 270
+   },
+   "turnus": "Wintersemester",
+   "responsible": "Prof. Dr. Ralf Zimmer",
+   "lecturers": [
+    "Prof. Dr. Ralf Zimmer Prof. Dr. Caroline Friedel"
+   ],
+   "manual_fields": [],
+   "id": "IN5019",
+   "name": "Algorithmische Systembiologie",
+   "catalog": "methods",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 9,
+    "handbook": 9,
+    "web": 9,
+    "module_pdf": 9
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5088",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5088_CompMethEvolBiol.pdf",
+   "pdf_file": "data/cit_modules/IN5088.pdf",
+   "title": "Computational Methods in Evolutionary Biology",
+   "type": "Vorlesung mit Übung",
+   "credits": 9,
+   "teaching_form": "4V + 3Ü",
+   "language": "Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 105,
+    "self": 165,
+    "total": 270
+   },
+   "turnus": "Wintersemester",
+   "responsible": "Prof. Dr. Dirk Metzler",
+   "lecturers": [
+    "Prof. Dr. Dirk Metzler"
+   ],
+   "manual_fields": [],
+   "id": "IN5088",
+   "name": "Computational Methods in Evolutionary Biology",
+   "catalog": "methods",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 9,
+    "handbook": 9,
+    "web": 9,
+    "module_pdf": 9
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5073",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5073_FortgeschrittenenpraktikumBioinformatik_2021.pdf",
+   "pdf_file": "data/cit_modules/IN5073.pdf",
+   "title": "Advanced Lab Course Bioinformatics",
+   "type": "Praktikum Lab course",
+   "credits": 12,
+   "teaching_form": "6 Pr",
+   "language": "Deutsch/Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 90,
+    "self": 270,
+    "total": 360
+   },
+   "turnus": "Winter-/ Sommersemester; on demand",
+   "responsible": "Prof. Dr. Burkhard Rost, Prof. Dr. Ralf Zimmer",
+   "lecturers": [
+    "Alle Professoren der Bioinformatik"
+   ],
+   "manual_fields": [],
+   "id": "IN5073",
+   "name": "Fortgeschrittenen-Praktikum Bioinformatik",
+   "catalog": "methods",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 12,
+    "handbook": 12,
+    "web": 12,
+    "module_pdf": 12
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5116",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5116_W_PerlenBioinfAlgorithmen.pdf",
+   "pdf_file": "data/cit_modules/IN5116.pdf",
+   "title": "Bioinformatics Pearls: Algorithmics",
+   "type": "Vorlesung mit Übungen",
+   "credits": 9,
+   "teaching_form": "4V + 2Ü",
+   "language": "English",
+   "level": "Master",
+   "workload": {
+    "presence": 90,
+    "self": 180,
+    "total": 270
+   },
+   "turnus": "Unregelmäßig",
+   "responsible": "Prof. Dr. Ralf Zimmer",
+   "lecturers": [
+    "Prof. Dr. Ralf Zimmer"
+   ],
+   "manual_fields": [],
+   "id": "IN5116",
+   "name": "Perlen der Bioinformatik: Algorithmen",
+   "catalog": "methods",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 9,
+    "handbook": 9,
+    "web": 9,
+    "module_pdf": 9
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5096",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5096_W_PerlenBioinfENCODE.pdf",
+   "pdf_file": "data/cit_modules/IN5096.pdf",
+   "title": "Bioinformatics Pearls: ENCODE",
+   "type": "Vorlesung mit Übungen",
+   "credits": 9,
+   "teaching_form": "4V + 2Ü",
+   "language": "English",
+   "level": "Master",
+   "workload": {
+    "presence": 90,
+    "self": 180,
+    "total": 270
+   },
+   "turnus": "unregelmäßig",
+   "responsible": "Prof. Dr. Ralf Zimmer",
+   "lecturers": [
+    "Prof. Dr. Ralf Zimmer Prof. Dr. Caroline Friedel"
+   ],
+   "manual_fields": [],
+   "id": "IN5096",
+   "name": "Perlen der Bioinformatik: ENCODE",
+   "catalog": "methods",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 9,
+    "handbook": null,
+    "web": 9,
+    "module_pdf": 9
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5089",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5089_Analysis_of_high-dimensional_biological_data.pdf",
+   "pdf_file": "data/cit_modules/IN5089.pdf",
+   "title": "Analysis of high-dimensional biological data",
+   "type": "Lecture with exercise",
+   "credits": 6,
+   "teaching_form": "3V + 1Ü",
+   "language": "English",
+   "level": "Master",
+   "workload": {
+    "presence": 60,
+    "self": 120,
+    "total": 180
+   },
+   "turnus": "Sommersemester",
+   "responsible": "Prof. Dr. Christian L. Müller",
+   "lecturers": [
+    "Prof. Dr. Christian L. Müller"
+   ],
+   "manual_fields": [],
+   "id": "IN5089",
+   "name": "Analysis of High-Dimensional Biological Data",
+   "catalog": "cs",
+   "credits_used_from": "handbook",
+   "credits_sources": {
+    "pdf": null,
+    "handbook": 6,
+    "web": 6,
+    "module_pdf": 6
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5159",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5159_Big_Data_Management_and_Analytics.pdf",
+   "pdf_file": "data/cit_modules/IN5159.pdf",
+   "title": "Big Data Management and Analytics",
+   "type": "Vorlesung mit Übung",
+   "credits": 6,
+   "teaching_form": "3V + 2Ü",
+   "language": "Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 75,
+    "self": 105,
+    "total": 180
+   },
+   "turnus": "Wintersemester",
+   "responsible": "Prof- Dr. Matthias Schubert",
+   "lecturers": [
+    "Prof. Dr. Matthias Schubert"
+   ],
+   "manual_fields": [],
+   "id": "IN5159",
+   "name": "Big Data Management and Analytics",
+   "catalog": "cs",
+   "credits_used_from": "handbook",
+   "credits_sources": {
+    "pdf": null,
+    "handbook": 6,
+    "web": 6,
+    "module_pdf": 6
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5042",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5042_Data_Mining_Algorithmen_I.pdf",
+   "pdf_file": "data/cit_modules/IN5042.pdf",
+   "title": "Data Mining Algorithms I",
+   "type": "Vorlesung mit Übung",
+   "credits": 6,
+   "teaching_form": "3V + 2Ü",
+   "language": "Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 75,
+    "self": 105,
+    "total": 180
+   },
+   "turnus": "Wintersemester",
+   "responsible": "Prof. Dr. Thomas Seidl",
+   "lecturers": [
+    "Prof. Dr. Thomas Seidl"
+   ],
+   "manual_fields": [],
+   "id": "IN5042",
+   "name": "Data Mining Algorithms I",
+   "catalog": "cs",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 6,
+    "handbook": 6,
+    "web": 6,
+    "module_pdf": 6
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5043",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5043_W_Knowledge_Discovery_in_Databases_2.pdf",
+   "pdf_file": "data/cit_modules/IN5043.pdf",
+   "title": "Knowledge Discovery in Databases II",
+   "type": "Vorlesung mit Übung",
+   "credits": 6,
+   "teaching_form": "3V + 2Ü",
+   "language": "Deutsch",
+   "level": "Master",
+   "workload": {
+    "presence": 75,
+    "self": 105,
+    "total": 180
+   },
+   "turnus": "Wintersemester",
+   "responsible": "PD Dr. Matthias Schubert",
+   "lecturers": [
+    "PD Dr. Matthias Schubert"
+   ],
+   "manual_fields": [],
+   "id": "IN5043",
+   "name": "Data Mining Algorithms II",
+   "catalog": "cs",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 6,
+    "handbook": 6,
+    "web": 6,
+    "module_pdf": 6
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5176",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5176_DeepLearningandArtificialIntelligence_Schubert_2021.10.13.pdf",
+   "pdf_file": "data/cit_modules/IN5176.pdf",
+   "title": "Deep Learning and Artificial Intelligence",
+   "type": "Vorlesung mit Übung",
+   "credits": 6,
+   "teaching_form": "3V + 2Ü",
+   "language": "Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 75,
+    "self": 105,
+    "total": 180
+   },
+   "turnus": "Wintersemester",
+   "responsible": "Prof. Dr. Matthias Schubert",
+   "lecturers": [
+    "Prof. Dr. Matthias Schubert"
+   ],
+   "manual_fields": [],
+   "id": "IN5176",
+   "name": "Deep Learning and Artificial Intelligence",
+   "catalog": "cs",
+   "credits_used_from": "web",
+   "credits_sources": {
+    "pdf": null,
+    "handbook": null,
+    "web": 6,
+    "module_pdf": 6
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5085",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5085_W_ParallelComputingGA.pdf",
+   "pdf_file": "data/cit_modules/IN5085.pdf",
+   "title": "Parallel Computing: Foundations and Applications",
+   "type": "Vorlesung mit Übung",
+   "credits": 6,
+   "teaching_form": "3V + 2Ü",
+   "language": "Deutsch",
+   "level": "Master",
+   "workload": {
+    "presence": 75,
+    "self": 105,
+    "total": 180
+   },
+   "turnus": "Wintersemester",
+   "responsible": "Prof. Dr. Dieter Kranzlmüller",
+   "lecturers": [
+    "Prof. Dr. Dieter Kranzlmüller Dr. Karl Fürlinger"
+   ],
+   "manual_fields": [],
+   "id": "IN5085",
+   "name": "Parallel and High Performance Computing",
+   "catalog": "cs",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 6,
+    "handbook": 6,
+    "web": 6,
+    "module_pdf": 6
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5036",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5036_W_AdvancedEvolutionaryGenomics.pdf",
+   "pdf_file": "data/cit_modules/IN5036.pdf",
+   "title": "Fortgeschrittene evolutionäre Genomik",
+   "type": "Vorlesung",
+   "credits": 3,
+   "teaching_form": "2V",
+   "language": "Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 30,
+    "self": 60,
+    "total": 90
+   },
+   "turnus": "Sommersemester",
+   "responsible": "Prof. Dr. John Parsch",
+   "lecturers": [
+    "Prof. Dr. John Parsch"
+   ],
+   "manual_fields": [],
+   "id": "IN5036",
+   "name": "Advanced Evolutionary Genomics",
+   "catalog": "bio",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 3,
+    "handbook": 3,
+    "web": 3,
+    "module_pdf": 3
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5035",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5035_W_BasicEvolutionaryGenomics.pdf",
+   "pdf_file": "data/cit_modules/IN5035.pdf",
+   "title": "Grundlegende evolutionäre Genomik",
+   "type": "Vorlesung",
+   "credits": 3,
+   "teaching_form": "2V",
+   "language": "Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 30,
+    "self": 60,
+    "total": 90
+   },
+   "turnus": "Sommersemester",
+   "responsible": "Prof. Dr. John Parsch",
+   "lecturers": [
+    "Prof. Dr. John Parsch"
+   ],
+   "manual_fields": [],
+   "id": "IN5035",
+   "name": "Basic Evolutionary Genomics",
+   "catalog": "bio",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 3,
+    "handbook": 3,
+    "web": 3,
+    "module_pdf": 3
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5062",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5062_Biochemie_IV_Zellulaere_Biochemie.pdf",
+   "pdf_file": "data/cit_modules/IN5062.pdf",
+   "title": "Biochemistry 4 – Cellular Biochemistry",
+   "type": "Vorlesung",
+   "credits": 6,
+   "teaching_form": "Vorlesung, 4 SWS",
+   "language": "Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 60,
+    "self": 120,
+    "total": 180
+   },
+   "turnus": "Wintersemester",
+   "responsible": "Prof. Dr. Ulrike Gaul",
+   "lecturers": [
+    "Prof. Dr. Ulrike Gaul"
+   ],
+   "manual_fields": [],
+   "id": "IN5062",
+   "name": "Biochemie 4 - Zelluläre Biochemie",
+   "catalog": "bio",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 6,
+    "handbook": 6,
+    "web": 6,
+    "module_pdf": 6
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5064",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5064_Biochemie_V_Life_Cycle_of_Proteins.pdf",
+   "pdf_file": "data/cit_modules/IN5064.pdf",
+   "title": "Biochemistry V - Life cycle of proteins",
+   "type": "Vorlesung",
+   "credits": 3,
+   "teaching_form": "Vorlesung, 2 SWS",
+   "language": "Deutsch / Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 30,
+    "self": 60,
+    "total": 90
+   },
+   "turnus": "WS, jährlich",
+   "responsible": "",
+   "lecturers": [
+    "Prof. Beckmann"
+   ],
+   "manual_fields": [],
+   "id": "IN5064",
+   "name": "Biochemie 5 -Lebenszyklus der Proteine",
+   "catalog": "bio",
+   "credits_used_from": "handbook",
+   "credits_sources": {
+    "pdf": null,
+    "handbook": 3,
+    "web": 3,
+    "module_pdf": 3
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5065",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5065_Biochemie_VI_Model_Organisms.pdf",
+   "pdf_file": "data/cit_modules/IN5065.pdf",
+   "title": "Biochemistry VI - model organisms",
+   "type": "Vorlesung",
+   "credits": 3,
+   "teaching_form": "Vorlesung, 2 SWS",
+   "language": "Deutsch / Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 30,
+    "self": 60,
+    "total": 90
+   },
+   "turnus": "SS, jährlich",
+   "responsible": "",
+   "lecturers": [
+    "Prof. Gaul"
+   ],
+   "manual_fields": [],
+   "id": "IN5065",
+   "name": "Biochemie 6 - Modellorganismen",
+   "catalog": "bio",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 3,
+    "handbook": 3,
+    "web": 3,
+    "module_pdf": 3
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5066",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5066_Biochemie_VII_Flow_of_Genetic_Information.pdf",
+   "pdf_file": "data/cit_modules/IN5066.pdf",
+   "title": "Biochemistry VII - flow of genetic information",
+   "type": "Vorlesung",
+   "credits": 3,
+   "teaching_form": "Vorlesung, 2 SWS",
+   "language": "Deutsch / Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 30,
+    "self": 60,
+    "total": 90
+   },
+   "turnus": "WS, jährlich",
+   "responsible": "",
+   "lecturers": [
+    "Prof. Hopfner"
+   ],
+   "manual_fields": [],
+   "id": "IN5066",
+   "name": "Biochemie 7 - Genetischer Informationsfluss",
+   "catalog": "bio",
+   "credits_used_from": "handbook",
+   "credits_sources": {
+    "pdf": null,
+    "handbook": 3,
+    "web": 3,
+    "module_pdf": 3
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "IN5037",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/IN5037_W_Evolutionary_Genetics.pdf",
+   "pdf_file": "data/cit_modules/IN5037.pdf",
+   "title": "Evolutionäre Genetik",
+   "type": "Vorlesung",
+   "credits": 6,
+   "teaching_form": "4V",
+   "language": "Englisch",
+   "level": "Master",
+   "workload": {
+    "presence": 60,
+    "self": 120,
+    "total": 180
+   },
+   "turnus": "Wintersemester",
+   "responsible": "Prof. Dr. John Parsch",
+   "lecturers": [
+    "Prof. Dr. John Parsch"
+   ],
+   "manual_fields": [],
+   "id": "IN5037",
+   "name": "Evolutionary Genetics",
+   "catalog": "bio",
+   "credits_used_from": "pdf",
+   "credits_sources": {
+    "pdf": 6,
+    "handbook": 6,
+    "web": 6,
+    "module_pdf": 6
+   },
+   "credits_conflict": false
+  },
+  {
+   "module_id": "CIT802000",
+   "pdf_url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Bioinformatik/LMU_Module/CIT802000_Scientific_Writing_Bioinformatics.pdf",
+   "pdf_file": "data/cit_modules/CIT802000.pdf",
+   "title": "Wissenschaftliches Schreiben für Bioinformatik",
+   "type": "Seminar",
+   "credits": 3,
+   "teaching_form": "2S",
+   "language": "Deutsch oder Englisch (wird zum Beginn der Veranstaltung bekannt gegeben)",
+   "level": "Master",
+   "workload": {
+    "presence": 30,
+    "self": 60,
+    "total": 90
+   },
+   "turnus": "Jährlich (Wintersemester; bei Bedarf zusätzlich oder alternativ auch im Sommersemester)",
+   "responsible": "Prof. Dr. Caroline Friedel",
+   "lecturers": [
+    "Prof. Dr. Caroline Friedel"
+   ],
+   "manual_fields": [],
+   "id": "CIT802000",
+   "name": "Wissenschaftliches Schreiben für Bioinformatik",
+   "catalog": "interdisc",
+   "credits_used_from": "web",
+   "credits_sources": {
+    "pdf": null,
+    "handbook": null,
+    "web": 3,
+    "module_pdf": 3
+   },
+   "credits_conflict": false
+  }
  ]
 }

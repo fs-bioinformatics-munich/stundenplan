@@ -1,7 +1,6 @@
 import type { ScheduleData, Slot } from '../lib/types';
 import {
-  clashesWith, committedBlocks, conflictKeys, conflictPairs, exercisesOf, groupState,
-  lecturesWithoutPick, selectableGroups, type AppState,
+  committedBlocks, conflictKeys, conflictPairs, exercisesOf, lecturesWithoutPick, type AppState,
 } from '../lib/selection';
 import { fmtRange, toMin } from '../lib/time';
 import { WeekGrid, type GridBox } from './WeekGrid';
@@ -9,6 +8,7 @@ import { CreditsPanel } from './CreditsPanel';
 import { creditNote } from '../lib/credits';
 import { gridSlots } from '../lib/slots';
 import { toneOf } from './MainView';
+import { exerciseBoxes } from './exerciseBoxes';
 
 export function ScheduleView(props: {
   data: ScheduleData;
@@ -19,6 +19,8 @@ export function ScheduleView(props: {
   onPick: (exerciseId: number, group: string) => void;
   onOpenCourse: (id: number) => void;
   onOpenExercise: (id: number) => void;
+  onToggleCit: (id: string) => void;
+  onOpenCit: (id: string) => void;
   onBack: () => void;
 }) {
   const { data, state, showExercises } = props;
@@ -29,6 +31,7 @@ export function ScheduleView(props: {
   const conflicts = conflictKeys(blocks);
   const pairs = conflictPairs(blocks);
   const pending = lecturesWithoutPick(data, state);
+  const citSelected = data.cit_modules.filter((m) => state.modules.includes(m.id));
 
   const box = (key: string, s: Slot, extra: Partial<GridBox> & Pick<GridBox, 'title' | 'tone' | 'checkable' | 'checked'>): GridBox => ({
     key, day: s.day, start: toMin(s.start), end: toMin(s.end), sub: fmtRange(s.start, s.end), conflict: conflicts.has(key),
@@ -43,23 +46,7 @@ export function ScheduleView(props: {
     onOpen: () => props.onOpenCourse(c.id), onCheck: () => props.onToggle(c.id),
   })));
 
-  if (showExercises) {
-    for (const e of exercises) {
-      e.fixed_slots.forEach((s, i) => boxes.push(box(`f${e.id}:${i}`, s, {
-        title: e.label, tone: 'fixed', checkable: false, checked: false, sub: `${fmtRange(s.start, s.end)} · all groups`,
-        onOpen: () => props.onOpenExercise(e.id),
-      })));
-      for (const g of selectableGroups(e)) {
-        const st = groupState(state, e.id, g.name);
-        g.slots.forEach((s, i) => boxes.push(box(`g${e.id}:${g.name}:${i}`, s, {
-          title: e.label, sub: `${fmtRange(s.start, s.end)} · ${g.name}`, tone: 'exercise', checkable: true, checked: st === 'chosen', disabled: st === 'disabled',
-          clash: st === 'free' && clashesWith(blocks, s), regOpen: e.registration.open,
-          tooltip: st === 'disabled' ? `Another group of this exercise is already chosen` : (s.room ?? undefined),
-          onOpen: () => props.onOpenExercise(e.id), onCheck: () => props.onPick(e.id, g.name),
-        })));
-      }
-    }
-  }
+  if (showExercises) boxes.push(...exerciseBoxes(data, state, props));
 
   const noDateGroups = exercises.flatMap((e) => e.groups.filter((g) => g.slots.length === 0).map((g) => ({ e, g })));
 
@@ -83,11 +70,24 @@ export function ScheduleView(props: {
         <WeekGrid boxes={boxes} emptyText="Nothing selected." />
         <aside class="summary" data-testid="summary">
           <h3>Summary</h3>
-          <p>{courses.length} course{courses.length === 1 ? '' : 's'}</p>
+          <p>{courses.length} course{courses.length === 1 ? '' : 's'}{citSelected.length > 0 && ` + ${citSelected.length} without dates`}</p>
           <CreditsPanel data={data} state={state} layout="column" />
           <ul>
             {courses.map((c) => <li><a href="#" onClick={(e) => { e.preventDefault(); props.onOpenCourse(c.id); }}>{c.label}</a></li>)}
           </ul>
+          {citSelected.length > 0 && (
+            <>
+              <h4>Modules without dates</h4>
+              <ul data-testid="cit-selected">
+                {citSelected.map((m) => (
+                  <li>
+                    <input type="checkbox" checked onChange={() => props.onToggleCit(m.id)} aria-label={`Deselect ${m.name}`} />{' '}
+                    <a href="#" onClick={(e) => { e.preventDefault(); props.onOpenCit(m.id); }}>{m.name}</a> <span class="muted">{m.credits} ECTS</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
           {pairs.length > 0 && (
             <>
               <h4 class="warn">Conflicts</h4>

@@ -1,11 +1,12 @@
 import type { Category, Course, ScheduleData } from '../lib/types';
-import type { AppState } from '../lib/selection';
+import { exercisesOf, type AppState } from '../lib/selection';
 import type { Filters } from '../lib/store';
 import { fmtRange, toMin } from '../lib/time';
 import { WeekGrid, type GridBox } from './WeekGrid';
 import { CreditsPanel } from './CreditsPanel';
-import { creditNote } from '../lib/credits';
+import { citCreditNote, creditNote } from '../lib/credits';
 import { gridSlots, oneOffSlots } from '../lib/slots';
+import { exerciseBoxes } from './exerciseBoxes';
 
 const CATEGORY_LABELS: Record<Category, string> = {
   lecture: 'Lectures (VO, VI)',
@@ -39,6 +40,12 @@ export function MainView(props: {
   onToggle: (id: number) => void;
   onOpen: (id: number) => void;
   onCreate: () => void;
+  onToggleCit: (id: string) => void;
+  onOpenCit: (id: string) => void;
+  showExercises: boolean;
+  setShowExercises: (v: boolean) => void;
+  onOpenExercise: (id: number) => void;
+  onPick: (exerciseId: number, group: string) => void;
 }) {
   const { data, state, filters, setFilters } = props;
   const selected = new Set(state.selected);
@@ -62,6 +69,13 @@ export function MainView(props: {
     onOpen: () => props.onOpen(c.id),
     onCheck: () => props.onToggle(c.id),
   })));
+  const hasExercises = exercisesOf(data, state.selected).length > 0;
+  if (props.showExercises) boxes.push(...exerciseBoxes(data, state, props));
+  const q = filters.query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const citVisible = data.cit_modules.filter((m) => {
+    const hay = [m.name, m.id, m.title ?? '', ...m.lecturers].join(' ').toLowerCase();
+    return q.every((t) => hay.includes(t));
+  });
   const undated = visible.filter((c) => c.slots.length === 0);
 
   return (
@@ -79,11 +93,12 @@ export function MainView(props: {
           Registration open
         </label>
         <span class="spacer" />
-        <span class="counter" data-testid="counter">{state.selected.length} selected</span>
-        <button class="primary" disabled={!state.selected.length} onClick={props.onCreate} data-testid="create">Create schedule</button>
+        <span class="counter" data-testid="counter">{state.selected.length + state.modules.length} selected</span>
+        <button class="primary" disabled={!state.selected.length && !state.modules.length} onClick={props.onCreate} data-testid="create">Create schedule</button>
       </div>
       <div class="toolbar types" data-testid="types">
         {counts.map(([cat, n]) => (
+          <>
           <label class={`chip tone-${cat}`}>
             <input
               type="checkbox"
@@ -92,6 +107,18 @@ export function MainView(props: {
             />
             {CATEGORY_LABELS[cat]} <span class="muted">{n}</span>
           </label>
+          {cat === 'lecture' && (
+            <button
+              class={props.showExercises ? 'primary on' : 'primary'}
+              onClick={() => props.setShowExercises(!props.showExercises)}
+              disabled={!hasExercises}
+              title={hasExercises ? 'Show the exercise groups of the selected lectures' : 'Select a lecture that has exercises first'}
+              data-testid="show-exercises"
+            >
+              {props.showExercises ? 'Hide exercises' : 'Show exercises'}
+            </button>
+          )}
+          </>
         ))}
       </div>
       <CreditsPanel data={data} state={state} layout="strip" legend={boxes.some((b) => b.creditNote)} />
@@ -104,6 +131,23 @@ export function MainView(props: {
               <li>
                 <input type="checkbox" checked={selected.has(c.id)} onChange={() => props.onToggle(c.id)} aria-label={`Select ${c.label}`} />
                 <a href="#" onClick={(e) => { e.preventDefault(); props.onOpen(c.id); }}>{c.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {citVisible.length > 0 && (
+        <div class="undated cit-modules" data-testid="cit-modules">
+          <h3>Modules from the CIT catalog without TUMonline course ({citVisible.length})</h3>
+          <p class="muted">Only a module description PDF exists, so there are no dates. They can be selected anyway and count towards the credits.</p>
+          <ul>
+            {citVisible.map((m) => (
+              <li data-testid={`cit-${m.id}`}>
+                <input type="checkbox" checked={state.modules.includes(m.id)} onChange={() => props.onToggleCit(m.id)} aria-label={`Select ${m.name}`} />
+                <span class={`swatch cat-${m.catalog ?? 'none'}`} />
+                <a href="#" onClick={(e) => { e.preventDefault(); props.onOpenCit(m.id); }}>{m.name}</a>
+                <span class="muted"> {m.id} · {m.credits} ECTS</span>
+                {m.credits_conflict && <span class="note-mark" title={citCreditNote(m)}>*</span>}
               </li>
             ))}
           </ul>

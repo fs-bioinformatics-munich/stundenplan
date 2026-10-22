@@ -112,3 +112,4 @@ button:focus-visible, .box:focus-visible, input:focus-visible { outline: 2px sol
 .contact-box { min-width: 260px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
 header { flex-wrap: wrap; } .sources { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
 .catalog-line { font-size: 14px; margin-top: 2px; }
+.cit-modules li { display: flex; align-items: center; gap: 6px; } .cit-modules .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
