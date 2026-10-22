@@ -62,11 +62,11 @@ def parse_pdf(pdf_path):
 
 
 def parse_web(refresh=False):
-    """{module_id: {"cat", "credits"}} from the three elective tables on the CIT website."""
+    """{module_id: {"cat", "credits"}} from the four elective tables (FPSO 2026 section) on the CIT website."""
     html = fetch(WEB_URL, "catalog", "web", refresh=refresh)
-    tables = BeautifulSoup(html, "html.parser").find_all("table")[1:4]
+    tables = BeautifulSoup(html, "html.parser").find_all("table")[1:5]
     modules = {}
-    for cat, table in zip(("methods", "cs", "bio"), tables):
+    for cat, table in zip(("methods", "cs", "bio", "interdisc"), tables):
         for tr in table.find_all("tr")[1:]:
             cells = [td.get_text(" ", strip=True) for td in tr.find_all("td")]
             if len(cells) >= 5 and cells[1]:
@@ -95,4 +95,15 @@ def resolve(module_id, handbook_cats, pdf, web):
         return handbook_cats[0]
     if module_id in web:
         return web[module_id]["cat"]
+    return None
+
+
+def resolve_source(module_id, handbook_cats, pdf, web):
+    """Which source decided the catalog of a module (same order as resolve): pdf, handbook, web or None."""
+    if module_id in pdf:
+        return "pdf"
+    if handbook_cats:
+        return "handbook"
+    if module_id in web:
+        return "web"
     return None

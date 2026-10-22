@@ -244,29 +244,17 @@
    "cat": "methods",
    "credits": 9
   },
-  "CIT4230001": {
-   "cat": "methods",
-   "credits": 4
-  },
-  "WZ8097": {
-   "cat": "methods",
-   "credits": 6
-  },
   "IN5073": {
    "cat": "methods",
    "credits": 12
   },
-  "WZ8096": {
+  "CIT423019": {
    "cat": "methods",
    "credits": 6
   },
   "IN2393": {
    "cat": "methods",
    "credits": 6
-  },
-  "IN5187": {
-   "cat": "methods",
-   "credits": 3
   },
   "WZ8128": {
    "cat": "methods",
@@ -300,10 +288,6 @@
    "cat": "methods",
    "credits": 8
   },
-  "IN2344": {
-   "cat": "methods",
-   "credits": 5
-  },
   "WZ0402": {
    "cat": "methods",
    "credits": 5
@@ -311,10 +295,6 @@
   "WZ8119": {
    "cat": "methods",
    "credits": 6
-  },
-  "CIT802000": {
-   "cat": "methods",
-   "credits": 3
   },
   "IN2309": {
    "cat": "cs",
@@ -336,7 +316,7 @@
    "cat": "cs",
    "credits": 6
   },
-  "IN5030": {
+  "CIT423014": {
    "cat": "cs",
    "credits": 6
   },
@@ -344,7 +324,7 @@
    "cat": "cs",
    "credits": 6
   },
-  "IN2339": {
+  "CIT323007": {
    "cat": "cs",
    "credits": 6
   },
@@ -368,21 +348,13 @@
    "cat": "cs",
    "credits": 8
   },
-  "IN2031": {
+  "IN5128": {
    "cat": "cs",
-   "credits": 6
-  },
-  "IN2078": {
-   "cat": "cs",
-   "credits": 4
+   "credits": 3
   },
   "IN2346": {
    "cat": "cs",
    "credits": 6
-  },
-  "IN2071": {
-   "cat": "cs",
-   "credits": 4
   },
   "IN5075": {
    "cat": "cs",
@@ -404,13 +376,9 @@
    "cat": "cs",
    "credits": 9
   },
-  "IN2080": {
-   "cat": "cs",
-   "credits": 4
-  },
   "IN2361": {
    "cat": "cs",
-   "credits": 5
+   "credits": 6
   },
   "IN5085": {
    "cat": "cs",
@@ -440,10 +408,6 @@
    "cat": "bio",
    "credits": 3
   },
-  "IN5128": {
-   "cat": "bio",
-   "credits": 3
-  },
   "IN5062": {
    "cat": "bio",
    "credits": 6
@@ -459,6 +423,10 @@
   "IN5066": {
    "cat": "bio",
    "credits": 3
+  },
+  "CH0156": {
+   "cat": "bio",
+   "credits": 5
   },
   "WZ2693": {
    "cat": "bio",
@@ -484,10 +452,6 @@
    "cat": "bio",
    "credits": 5
   },
-  "IN5026": {
-   "cat": "bio",
-   "credits": 3
-  },
   "CIT803001": {
    "cat": "bio",
    "credits": 3
@@ -508,29 +472,57 @@
    "cat": "bio",
    "credits": 5
   },
-  "IN5056": {
-   "cat": "bio",
-   "credits": 3
-  },
   "WZ2457": {
    "cat": "bio",
    "credits": 3
-  },
-  "WZ2381": {
-   "cat": "bio",
-   "credits": 5
   },
   "WZ2580": {
    "cat": "bio",
    "credits": 5
   },
-  "WZ2170": {
-   "cat": "bio",
-   "credits": 3
-  },
   "WZ2439": {
    "cat": "bio",
-   "credits": 5
+   "credits": 6
+  },
+  "SOT86062": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "CLA30803": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "SOT46401": {
+   "cat": "interdisc",
+   "credits": 6
+  },
+  "SOT86060": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "CLA21107": {
+   "cat": "interdisc",
+   "credits": 2
+  },
+  "SOT86066": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "IN5187": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "ED0038": {
+   "cat": "interdisc",
+   "credits": 3
+  },
+  "CLA21109": {
+   "cat": "interdisc",
+   "credits": 2
+  },
+  "CIT802000": {
+   "cat": "interdisc",
+   "credits": 3
   }
  }
 }

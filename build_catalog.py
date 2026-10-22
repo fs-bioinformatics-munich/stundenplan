@@ -25,7 +25,7 @@ def main(refresh):
     hb = {m: [catalog.HANDBOOK_NAMES[c] for c in (cats or "").split("|") if c] for m, (_, _, cats) in mods.items()}
 
     lines = ["# Module catalog report", "",
-             "Precedence for catalog and credits: **regulation PDF (up to date) > handbook > website (2021 rules)**.", "",
+             "Precedence for catalog and credits: **regulation PDF (up to date) > handbook > website (FPSO 2026)**.", "",
              f"PDF: {len(pdf)} modules, website: {len(web)} modules, handbook (SPO 20261): "
              f"{sum(1 for v in hb.values() if v)} modules with a catalog path.", ""]
     problems = []
