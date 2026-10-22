@@ -220,7 +220,7 @@ Limits: the Computational Neuroscience Ringvorlesung is linked to no module (the
 
 Wherever credits appear, a disagreement between the sources (regulation PDF, handbook, website) is marked and explained, never silently resolved:
 - `export_data.py` writes per module `ects_sources` (pdf / handbook / web), `ects_used_from` and `ects_conflict`, and per course `ects_conflict`; it prints the affected modules on every export (currently CIT4230001, IN2361, WZ2439).
-- Source labels in the UI (decision 2026-10-18): the PDF value is shown as **"ECTS acc. to FPSO 26"**, the handbook value as **"ECTS acc. to TUM module handbook"**, the website value as "ECTS acc. to CIT website (2021 rules)"; a missing value reads "not listed".
+- Source labels in the UI (decision 2026-10-18): the PDF value is shown as **"ECTS acc. to FPSO 26"**, the handbook value as **"ECTS acc. to TUM module handbook"**, the website value as "ECTS acc. to CIT website (FPSO 2026)" (was "(2021 rules)" until 2026-10-21); a missing value reads "not listed".
 - Boxes show a red `*` after the ECTS; hovering gives the text, e.g. "Credits differ between sources: ECTS acc. to FPSO 26: not listed; ECTS acc. to TUM module handbook: 6; ECTS acc. to CIT website (2021 rules): 5. Counted: 6 (TUM module handbook)."
 - The popup shows the sources as a list in a highlighted note under the module, the counted one in bold marked "(counted)".
 - The credits panel (main view and schedule summary) marks the catalog row and the total with `*` when a selected module is affected, and lists each affected module with all source values and the counted value in a highlighted footnote. In the main view a short legend line appears whenever a marked box is visible.
@@ -262,3 +262,26 @@ This is the M7 work. Plan for later:
 ## Note: cleanup check (2026-10-20)
 
 The web app reads only `app/public/data/schedule.json`; it uses neither `raw/` nor `query.py`. For hosting only `app/dist/` is needed. Details of the check of `raw/pos` and `query.py`: see `plan_data_scraper.md`, "Cleanup check". Plan files were renamed (`plan.md` -> `plan_data_scraper.md`, `plan_schedule.md` -> `plan_web_app.md`).
+
+## Update: website on FPSO 2026 (2026-10-21)
+
+- The CIT website was updated to the FPSO 2026 rules (details in `plan_data_scraper.md`, "Update: CIT website now follows FPSO 2026"). The credit source label in the app is now **"ECTS acc. to CIT website (FPSO 2026)"** (`app/src/lib/credits.ts`, unit test adapted).
+- Effect on the data: the credit discrepancies of CIT4230001 and IN2361 disappeared; the only remaining discrepancy is WZ2439 (handbook 5, PDF and website 6), and that module has no course in WS 26/27, so **no box shows a `*` at the moment**. Catalogs of all lectures unchanged. The earlier statement about three affected modules is outdated.
+- The e2e test no longer assumes a flagged lecture: with none, it checks that no `*` or legend is shown; with one it runs the former popup/footnote checks. Unit tests (23) and e2e (31 checks) pass.
+- Open: precedence of website vs handbook (see `plan_data_scraper.md`).
+
+## Update: catalog source in the popup (2026-10-21)
+
+Under each module the popup now has a short line **"Catalog: <catalog> · <source>"**, source names as decided:
+- regulation PDF -> "FPSO published in July 2026"
+- handbook (tooltip on the module page) -> "TUMonline website"
+- Modulkatalog -> "CIT FPSO 2026 website"
+
+When the sources name different catalogs, the line continues in red with one entry per source ("sources differ: FPSO published in July 2026: not listed; TUMonline website: Biologie/Biochemie/Chemie; CIT FPSO 2026 website: Informatik, Mathematik und Statistik"); "not listed" alone is not a disagreement. (Example IN5128 was used while the handbook cache was stale; with fresh data all three agree, see the next note.)
+- Data: `export_data.py` writes per module `catalog_sources` (`pdf`, `handbook` as list of all [20261] paths, `web`) and `catalog_from`; `tum.catalog.resolve_source` mirrors `resolve`. Code: `catalogLines`, `catalogConflict` in `app/src/lib/credits.ts`, `CoursePopup.tsx`.
+- Not changed: the credit labels ("ECTS acc. to FPSO 26", "... TUM module handbook", "... CIT website (FPSO 2026)") keep their wording; they could be aligned to the names above.
+- Unit tests 25, e2e checks the line in the popup. The catalog is not marked on boxes (only in the popup).
+
+## Correction (2026-10-21): fresh handbook data
+
+The IN5128 catalog conflict and the "website vs handbook precedence" question noted above came from a stale handbook cache; after refetching, handbook and website agree (IN5128: Informatik, Mathematik und Statistik, all catalog sources consistent). The only remaining source difference is the WZ2439 credits (no course in WS 26/27, so no `*` visible). Catalog count of lectures: bio 6, methods 7, cs 10, interdisc 1, no catalog 2 (Proteomics WZ2170 lost its catalog; see `plan_data_scraper.md`, "Correction: handbook pages were stale"). Unit tests 25 and e2e pass.

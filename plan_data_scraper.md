@@ -166,7 +166,7 @@ Known limits:
 
 - TUM module handbook: https://campus.tum.de/tumonline/WBMODHB.wbShow?pOrgNr=1 (module pages and the SPO module list are read from here).
 - FPSO Bioinformatics M.Sc. (23.07.2026): https://www.tum.de/fileadmin/w00bfo/www/Studium/Studienangebot/Lesbare_Fassung/Master/Bioinformatik_MA_FPSO_23072026.pdf (catalog and credit source with top priority, `data/fpso_modulkatalog.pdf`).
-- Modulkatalog (CIT website, 2021 rules): https://www.cit.tum.de/cit/studium/studiengaenge/master-bioinformatik/modulkatalog/
+- Modulkatalog (CIT website; since 2026-10-21 it has an FPSO 2026 section, the 2021 section stays below it): https://www.cit.tum.de/cit/studium/studiengaenge/master-bioinformatik/modulkatalog/
 
 All three are also linked in the app footer (see `plan_web_app.md`).
 
@@ -175,3 +175,40 @@ All three are also linked in the app footer (see `plan_web_app.md`).
 - **`raw/pos/` (230 MB, 132 files) is not part of the pipeline.** The cache kinds the code uses are `catalog, course, curriculum, groups, groups_rest, module_pages, modules, offers, search, xname`; no code (`scrape.py`, `tum/`, `build_catalog.py`, `export_data.py`, `query.py`) writes or reads `pos`. The files are raw curriculum-position JSON from the exploration phase (last written 2026-10-17 21:00, before the curriculum-list approach replaced it). Test: copy of the project without `raw/pos`, rerun `scrape.py` (no network call, no new files), `build_catalog.py`, `export_data.py`: `schedule.json` identical to the current one (except `generated`). Safe to delete; not listed in this plan.
 - **`query.py` stays.** It is a listed deliverable (Output section) and still runs on the current schema. The web app does not replace all of it: the review lists (courses without module link with fuzzy hints, modules not offered in WS 26/27 with their Turnus) and the CSV export exist only there. Only the schedule listing is superseded by the app.
 - Plan files renamed: `plan.md` -> `plan_data_scraper.md` (scraper and database), `plan_schedule.md` -> `plan_web_app.md` (web app); references updated.
+
+## Update: CIT website now follows FPSO 2026 (2026-10-21)
+
+The Modulkatalog page now starts with an "FPSO 2026" section (compulsory table, then the four elective tables), followed by the unchanged "FPSO 2021" section. Checked against the cached copy of 2026-10-18 (which only had the 2021 tables):
+- `tum/catalog.py: parse_web` reads tables 1 to 4 of the page, which are now the 2026 tables (methods, cs, bio, and the previously unparsed Überfachliche Grundlagen table), so a `build_catalog.py --refresh` was enough; the 2021 tables are ignored. The parser depends on the table order of the page.
+- Website modules: 79 (2021) -> 77 (2026, including 10 interdisciplinary modules).
+- The website now agrees with the regulation PDF on every shared module, for catalog and credits. The website credit conflicts of CIT4230001, IN2361 and WZ2439 are gone; only the handbook still says 5 credits for **WZ2439** (PDF and website: 6).
+- CIT323007 is now listed by the website (Informatik, Mathematik und Statistik, 6 credits), confirming what was taken from the handbook. It is still not in the PDF.
+- New disagreement: **IN5128** Einführung in Computational Neuroscience: website says Informatik/Mathematik/Statistik, handbook says Biologie/Biochemie/Chemie, not in the PDF. Currently `bio` (precedence rule PDF > handbook > website).
+- 7 modules that are in a handbook catalog but in neither PDF nor 2026 website (they were on the 2021 website): IN2031, IN2080, IN5026, IN5030, IN5056, WZ2170, WZ2381. Their catalog comes from the handbook only; they may have been dropped from the catalogs in 2026.
+- Not in the SPO 20261 module list (no courses can be shown): CH0156, CIT423014, CIT423019, CIT802000, IN5176.
+- `data/catalog_report.md` and `data/modulkatalog.json` regenerated.
+
+**Open decision:** the precedence rule (PDF > handbook > website) was set when the website still showed the 2021 rules. With the website on 2026 it could rank above the handbook; this only changes IN5128 (`bio` -> `cs`) and the 7 handbook-only modules stay as they are. Not changed.
+
+## Note: where the handbook names the catalog (2026-10-21)
+
+The catalog of a module is only in a **hover tooltip** (info icon after the `20261` row of "Zuordnungen zu SPO-Versionen" on the module page; hidden `overlayTTContainer` in the HTML). Checked for better places, none found: the SPO module list (`cbShowMHBListe`) has no catalog column, `showSpoTree` is not public ("Details ... im Studiensekretariat"), and the course page's curriculum positions (`.../slc.cm.curriculumposition/positions/{id}/course/allCurriculumPositions`) do not contain the Master 20261 curriculum for the tested courses. So the handbook is the weakest evidence; the app calls it "TUMonline website" and shows it next to the other sources (see `plan_web_app.md`).
+
+## Correction: handbook pages were stale (2026-10-21)
+
+The earlier section "Update: CIT website now follows FPSO 2026" compared the new website with **handbook pages cached on 2026-10-17**, and the handbook had changed since. Live check of IN5128 (module page `pKnotenNr=952415`): the `[20261]` tooltip now names *Wahlmodulkatalog Theorie Informatik, Mathematik und Statistik*, the cached page said *Biologie/Biochemie/Chemie*. All 257 module pages were refetched (`handbook.module_details(k, refresh=True)`, 0 failures), then `scrape.py` (rest from cache), `build_catalog.py`, `export_data.py` were rerun.
+
+Result:
+- **No catalog disagreement left.** IN5128 is `cs` in handbook and website (the "new disagreement" and the open precedence question of that section are void). IN5187 now has one handbook catalog (interdisc) and agrees with PDF and website.
+- The only remaining difference between sources is credits of **WZ2439** (handbook 5, PDF and website 6; module not offered in WS 26/27).
+- Handbook modules with a catalog path: 255 -> 248. The 7 modules that had *only* a handbook catalog (IN2031, IN2080, IN5026, IN5030, IN5056, WZ2170, WZ2381) lost their `[20261]` catalog path: they are no longer in any elective catalog, matching PDF and website. None of them has a catalog now ("handbook only" list is empty).
+- Effect on lectures: lecture **Proteomics (WZ2170, course 950940568)** has no catalog any more (grey, counts no credits). It is linked to WZ2170 by the handbook's offer node; its successor WZ2439 (same title, in the PDF as `bio`, 6 credits) is not offered in WS 26/27. To be checked by hand whether the lecture counts for WZ2439. Lectures per catalog: bio 6, methods 7, cs 10, interdisc 1, none 2.
+- **Cache age:** the handbook changes, so `raw/module_pages/` must be refreshed before each export that is published. `scrape.py --refresh` does it (together with all other steps).
+
+## Full refresh (2026-10-21)
+
+`scrape.py --refresh` (all steps refetched), then `build_catalog.py` and `export_data.py`.
+- **Course set unchanged:** 135 courses in the DB before and after (same ids, 2 unlinked), 26 lectures, 124 courses + 11 exercises in `schedule.json`. The live curriculum list now returns 135 courses (128 on 2026-10-17); the 7 extra ones were already in the DB through the id/name search, so nothing new appeared. (An earlier remark that "at least 7 courses were added" was wrong.)
+- **Changes in existing courses:** two lectures got their dates: *Fortgeschrittene Datenverarbeitungs- und Visualisierungstechniken* (IN2379, Friday 10-12) and *Protein Prediction II for Bioinformaticians* (IN2230, Tuesday 16-18 and Thursday 14-16); courses without dates 8 -> 7. Registration of *Künstliche Intelligenz in der Medizin I* and both *Multiomics Profiling for Microbiome Data* courses changed from open (RUNNING) to expired. Eight language courses and *Data Ethics in Practice* changed their slots.
+- Unit tests 25 and e2e pass on the new data.
+- Lesson: slots and registration states change during the first semester weeks, so the crawl must be repeated before publishing (see the update note in `plan_web_app.md`).
