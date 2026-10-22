@@ -1,0 +1,52 @@
+Analysis of high-dimensional biological data
+
+ Titel               Analysis of high-dimensional biological data
+ Typ                 Lecture with exercise
+ Credits             6 ECTS
+ Lehrform / SWS      3V + 1Ü
+ Sprache             English
+ Modulniveau         Master
+ Arbeitsaufwand      Präsenzstunden                60 h
+                     Eigenstudium                  120 h
+                     Gesamtaufwand                 180 h
+ Intended Learning   The students have a systematic overview of
+ Outcomes            different methods to analyze high dimensional
+                     biological data. They have a critical
+                     understanding of their power and their specific
+                     limitations.
+ Contents            The course covers important statistical methods
+                     and concepts for the analysis of high-
+                     dimensional biological high-throughput data.
+                     We will focus on bulk RNA-Seq, single-cell
+                     RNA-Seq, proteomic, metabolic, and, in
+                     particular, microbiome such as 16S rRNA and
+                     other amplicon data.
+
+                     Statistical topics include:
+
+                        ● Generative statistical models for count
+                          data
+                        ● Hypothesis testing for high-dimensional
+                          data
+                        ● Differential abundance and expression
+                          analysis
+                        ● High-Dimensional regression models for
+                          biological data
+                        ● Graphical models for network inference
+                        ● Deep learning models for high-
+                          throughput data
+
+ Examination         Written exam or oral exam
+ Media               Slide shows, blackboard presentation, videos
+Teaching and Learning   The module consists of in-classroom lectures,
+Methods                 recorded video lecture material, and an
+                        exercise. In the exercises, the methods
+                        presented in the lecture are applied to real data
+                        sets using the statistical software R. Students
+                        can work on the exercise sheets at home, and
+                        the exercise slot is used to discuss the
+                        solutions.
+Turnus                  Sommersemester
+Modulverantwortlicher   Prof. Dr. Christian L. Müller
+Dozenten                Prof. Dr. Christian L. Müller
+

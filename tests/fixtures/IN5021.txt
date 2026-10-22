@@ -1,0 +1,235 @@
+Algorithmische Bioinformatik:
+Netzwerke, Graphen und Systeme
+(IN5021)
+Title               Algorithmic Bioinformatics: Networks, Graphs and
+                    Systems
+Typ                 Vorlesung mit Übungen
+Credits             9
+Lehrform/SWS        4V + 2Ü
+Sprache             Deutsch/Englisch
+Modulniveau         Master
+Arbeitsaufwand      Präsenzstunden               90 Stunden
+                    Eigenstudium                 180 Stunden
+                    Gesamtaufwand                270 Stunden
+Angestrebte         Nach der Teilnahme am Modul sind die Studierenden
+Lernergebnisse      in der Lage, kombinatorische Methoden und
+                    Algorithmen auf Graphen (wie Wege, Pfade und
+                    Zyklen/Co-Zyklen in Graphen, Spannbäume, Schnitte
+                    und Flüsse, Zusammenhangskomponenten, Motife,
+                    isomorphe Subgraphen) zu analysieren und
+                    anzuwenden, Eigenschaften komplexer biologischer
+                    Netzwerke (wie z.B. Gradverteilungen, skalenfreie
+                    Netze, small-world Netze, komplexe Netzwerke,
+                    random graph Modelle, Konstruktion von
+                    evolvierenden Netzwerken) zu verstehen und zu
+                    beschreiben sowie einfache Petri-Netz Modelle zu
+                    entwickeln sowie ihre Eigenschaften (deadlock
+                    Freiheit, Invarianten, Erreichbarkeit, Lebendigkeit)
+                    zu analysieren.
+
+Intended Learning   At the end of the module, students are able to analyze
+Outcomes            and apply combinatorial methods and algorithms on
+                    graphs (e.g., paths, cycles, co-cycles in graphs,
+                    spanning trees, cuts, flows, connected components,
+                    motifs, isomorphic subgraphs), to understand and
+                    describe properties of complex biological networks
+                    (e.g., degree distribution, scale-free networks, small-
+                    world networks, complex networks, random graph
+                    models, construction of evolving networks) and to
+                    create simple Petri net models as well as to analyze
+                    their properties (e.g., deadlocks, invariants,
+                    reachability, liveness).
+
+Inhalt              Das Modul befasst sich mit spezielleren Methoden
+                    der kombinatorischen Optimierung,
+           Graphalgorithmen und komplexen Netzwerken
+           sowie deren Anwendungen auf aktuelle
+           Bioinformatikprobleme.
+           Dabei werden folgende Themen behandelt:
+              • Graphen und Graph-Eigenschaften (Planare
+                  Graphen, Zyklen und Co-Zyklen, Bäume und
+                  Spannbäume)
+              • Algorithmen auf Graphen (Tiefen- und
+                  Breitensuche, Topologische Sortierung,
+                  Minimale Spannbäume, Kürzeste Pfade, Flüsse
+                  in Graphen)
+              • Komplexe biologische Netzwerke
+                  (Gradverteilungen, Random Graphs und Scale-
+                  free Netzwerke, Netzwerkeigenschaften,
+                  Perkolation, Wachstumsmodelle, Small-World
+                  Netzwerke)
+              • Petri-Netze
+              • Bayes’sche Netze
+
+Contents   The module is focused on special methods of
+           combinatorial optimization, graph algorithms, and
+           complex networks as well as their application to
+           current algorithmic bioinformatics problems.
+           The following topics are covered:
+              • Graphs and graph properties (planar graphs,
+                  cycles and co-cycles, trees and spanning trees)
+              • Graph algorithms ( depth and breadth first
+                  search, topological sorting, minimum
+                  spanning trees, shortest paths, flows in
+                  networks)
+              • Complex biological networks (degree
+                  distributions, random graphs and scale-free
+                  networks, network properties, percolation,
+                  growth models, small-world networks)
+              • Petri nets
+              • Bayesian networks
+
+Prüfung    Prüfungsleistung (benotet):
+           -Klausur: 120 min
+
+           Wiederholungsklausur zu Ende des Semesters.
+           Details werden zu Beginn des Moduls bekannt
+           gegeben.
+
+           In der Klausur weisen die Studierenden nach, dass
+           sie die Konzepte und Algorithmen der
+           kombinatorischen Optimierung (z.B. Greedoide und
+           Matroide, Greedy-, Simplex- und Schnittebenen-
+              Algorithmen) und der wichtigsten Graphalgorithmen
+              sowie die Eigenschaften komplexer biologischer
+              Netzwerke verstehen können. Zudem wird geprüft,
+              inwieweit sie für verwandte Probleme
+              kombinatorische Methoden und Algorithmen auf
+              Graphen, random graphs und komplexen
+              Netzwerken exemplarisch und in begrenzter Zeit
+              analysieren, anwenden und übertragen können.
+              In der Klausur werden 4-7 Aufgaben bearbeitet, die
+              eine eigenständige Anwendung der algorithmischen
+              Konzepte und Modelle aus der Vorlesung zur Lösung
+              einer anspruchsvollen Problemstellung erfordern
+              (z.B. Modellierung und Reduktion eines
+              Bioinformatikproblems auf ein Graphproblem,
+              Konstruktion und Anwendung geeigneter
+              Graphalgorithmen, Greedoide und Matroide,
+              Vergleich von Eigenschaften komplexer
+              Netzwerkmodelle (Barabasi/Dorogovtsev) mit
+              random graph Modellen (Erdös-Renyi)), die
+              Skizzierung einer Beweisidee (z.B. Nachweis von
+              Grapheigenschaften wie Planarität oder
+              Zyklenfreiheit der entsprechenden Graphen) oder
+              die Modellierung oder Analyse eines Modells oder
+              Algorithmus (z.B. Fluss und Wege-Algorithmen für
+              Graphen, Motifsuche in zufälligen und komplexen
+              Netzwerken).
+
+Examination   Examination requirements (graded):
+              - written exam: 120 min.
+
+              A makeup exam will be offered at the end of the
+              semester, details will be announces at the beginning
+              of the course.
+
+              Within the written exam, students demonstrate that
+              they understand the presented models and
+              algorithms, e.g., concepts and algorithms of
+              combinatorial optimization (such as matroids,
+              greedoids, Greedy, Simplex, and cutting plane
+              methods), and the fundamental graph algorithms as
+              well as the properties of complex biological
+              networks. They can reproduce and apply them and
+              they can transfer and extend the models and
+              algorithms to similar graph, random graph and
+              complex network problems (exemplarily and within
+              limited time). The written exam contains 4 to 7
+              assignments, which require independent application
+              of algorithmic concepts and models presented in the
+              lecture to solve demanding problems (e.g., modeling
+             and reduction of a bioinformatics problem to a
+             graph/network problem, construction and
+             application of appropriate graph algorithms, of
+             greedoids and matroids, and the comparison of
+             features of complex networks (Barabasi,
+             Dorogovtsev) with random graph models (Erdös-
+             Renyi)), the sketch of a proof (e.g., of characteristics
+             of graphs such as planarity and cycle freeness) or the
+             modeling and analysis of simple problems (e.g., flow
+             and path algorithms for graphs, motif search in
+             random and complex networks).
+
+Literatur    Cormen, Leiserson, Rivest, Stein, Introduction to
+             Algorithms, MIT Press, 2001 (3rd. ed. 2009)
+             Claude Berge, Graphs and hypergraphs, Amsterdam,
+             North-Holland Publ., 1973
+             Korte & Vygen, Combinatorial Optimization. Theory
+             and Algorithms (Algorithms and Combinatorics) ,
+             Springer Verlag, 2000
+             Dieter Jungnickel, Graphs, Networks and Algorithms,
+             (1998) Springer, 2005
+             R.Albert & A.-L.Barabasi, Statistical mechanics of
+             complex networks, Reviews of modern physics, Vol
+             74, Jan. 2002
+             Newman, M., The structure and function of complex
+             networks, SIAM Review, 2003, 45, 167- 256
+             Dorogovtsev, S. & Mendes, J., Evolution of networks ,
+             Adv. Phys, 2002, 51, 1079-1187
+             Fox Keller, E., Revisiting “scale-free” networks,
+             Bioessays, 2005, 27, 1060-1068
+             T. Murata, Petri nets: Properties, Analysis, and
+             Applications, Proceedings of the IEEE, 1989
+
+Literature   Cormen, Leiserson, Rivest, Stein, Introduction to
+             Algorithms, MIT Press, 2001 (3rd. ed. 2009)
+             Claude Berge, Graphs and hypergraphs, Amsterdam,
+             North-Holland Publ., 1973
+             Korte & Vygen, Combinatorial Optimization. Theory
+             and Algorithms (Algorithms and Combinatorics) ,
+             Springer Verlag, 2000
+             Dieter Jungnickel, Graphs, Networks and Algorithms,
+             (1998) Springer, 2005
+             R.Albert & A.-L.Barabasi, Statistical mechanics of
+             complex networks, Reviews of modern physics, Vol
+             74, Jan. 2002
+             Newman, M., The structure and function of complex
+             networks, SIAM Review, 2003, 45, 167- 256
+             Dorogovtsev, S. & Mendes, J., Evolution of networks ,
+             Adv. Phys, 2002, 51, 1079-1187
+                        Fox Keller, E., Revisiting “scale-free” networks,
+                        Bioessays, 2005, 27, 1060-1068
+                        T. Murata, Petri nets: Properties, Analysis, and
+                        Applications, Proceedings of the IEEE, 1989
+Medienformen            Folienpräsentation, Tafelanschrieb
+Media                   slide show, blackboard
+Lehr- und Lernmethode   Vorlesung, Tutorübung, Aufgaben zum
+                        Selbststudium.
+                        Das Modul besteht aus einer Vorlesung sowie
+                        Übungen in kleinen Gruppen.
+                        In den Hausaufgaben, die freiwillig abzugeben sind,
+                        wird das Verständnis der Konzepte, Modelle und
+                        Algorithmen anhand konkreter Daten und Beispiele
+                        vertieft. Die Studierenden entwerfen mithilfe der in
+                        der Vorlesung vorgestellten Konzepte und Modelle
+                        neue Algorithmen für neue Probleme und wenden
+                        die vorgestellten Modelle auf verwandte Probleme
+                        an. In den Hausaufgaben werden selbständig
+                        anspruchsvolle Übungsaufgaben bearbeitet, die
+                        ähnlich wie die Klausuraufgaben sind (siehe oben)
+                        und deshalb zur Vorbereitung darauf dienen.
+                        In den Übungen werden mögliche Lösungsansätze
+                        der Aufgaben zum Selbststudium diskutiert.
+
+Teaching and Learning   Lecture, tutorial, assignments for individual study.
+Methods                 The module consists of a lecture and exercises in
+                        small groups.
+                        Within the assignments (the submission is optional),
+                        concepts, models, and algorithms (presented in the
+                        lecture) will be practically applied to real data and
+                        examples to deepen the understanding. The students
+                        develop, transfer, and extend algorithms and models
+                        based on the presented concepts to related problems.
+                        The assignments consist of demanding problems
+                        similar to the assignments in the written exam (for
+                        details see above) and serve as preparation for the
+                        written exam.
+                        Within the tutorials possible approaches for
+                        solutions of the assignments will be discussed.
+
+Häufigkeit              Sommersemester
+Modulverantwortlicher   Prof. Dr. Ralf Zimmer
+Dozenten                Prof. Dr. Ralf Zimmer
+                        Prof. Dr. Caroline Friedel
+

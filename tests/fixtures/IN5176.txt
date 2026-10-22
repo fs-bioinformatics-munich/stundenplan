@@ -1,0 +1,273 @@
+                     Deep Learning and
+                    Artificial Intelligence
+
+Titel                   Deep Learning and Artificial Intelligence
+Typ                     Vorlesung mit Übung
+Credits                 6 ECTS
+Lehrform/SWS            3V + 2Ü
+Sprache                 Englisch
+Modulniveau             Master
+Arbeitsaufwand          Präsenzstunden                  75 Stunden
+                        Eigenstudium                    105 Stunden
+                        Gesamtaufwand                   180 Stunden
+Angestrebte             Die Studierenden haben ein fundiertes Verständnis von
+Lernergebnisse          maschinellem Lernen mit neuronalen Netzen und wie
+                        sie trainiert werden. Insbesondere verstehen die
+                        Studenten die Problemstellungen die durch tiefe
+                        Netzwerkarchitekturen entstehen und die
+                        Lösungsmöglichkeiten für diese Probleme. Des
+                        Weiteren kennen die Studierenden die grundliegenden
+                        Methoden zum Trainieren autonomer Agenten und
+                        können einschätzen welche Technik für welches
+                        Anwendungsszenario am besten geeignet ist.
+                        Die Studierenden sollen in die Lage versetzt werden
+                        eigene Methoden zu entwickeln und diese in gängigen
+                        Software frameworks zu implementieren.
+Intended Learning       Students have a sound understanding of machine
+Outcomes                learning with neural networks and how they are
+                        trained. In particular, the students understand the
+                        problems created by deep network architectures and
+                        the solutions to these problems. Furthermore, the
+                        students know the basic methods for training
+                        autonomous agents and can assess which technique is
+                        most suitable for which application scenario.
+                        The students are enabled to develop their own methods
+                        and implement them in common software frameworks.
+                         Grundlagen maschinelles Lernen mit Neuronalen
+                         Netzen:
+                          Grundliegende Funktionsbausteine
+                          Fehlerfunktionen
+                          Evaluationsmethoden
+                        Training neuronaler Netzwerke:
+                             Methoden der Optimierung
+                             Berechnungsgraphen
+                             Gradienten und Gradientenabstieg
+    Backpropagation
+    Adaptive Lernraten
+    Initialisierung der Gewichte
+    Regularisierung
+    HyperparameterTuning
+Convolutional Neural Networks:
+    Convoluational Layer
+    Batchnormalization und Dropout
+    Pooling Operationen
+    Gängige Architekturen in der Bildverarbeitung
+
+Rekurrente Neuronale Netzwerke:
+    Sequenzmodellierung
+    Backpropagation-through-time Netzwerke
+    Exploding gradients
+    Architekturen mit Gating
+    Attention Mechanismen
+
+Bayesian Deep Learning:
+    Verbindung Neuronalen Netzwerken und
+      Bayesianischem Lernen
+    Arten der Modelunsicherheit
+    Epistemische oder aleatorische Unsicherheit
+    Integration von Unsicherheit in Neuronale
+      Netzwerke
+
+Representation Learning:
+    Embedings
+    Auto-Encoder
+    Restricted Boltzmann Machines
+    Metric Learning
+
+Deep Learning Tools:
+    Hardwareplattformen
+    Implementierungsframeworks
+    Verteiltes Training
+    Model Deployment
+
+Generative Modelle:
+    Neuronale Netzwerke zur
+      Verteilungsmodellierung
+    Variational Autoencoders
+    Generatice Adverserial Networks
+    Anwendungsbereiche
+
+Sequentielle Entscheidungsprobleme:
+    Deterministisches und undeterministische
+      Planungsprobleme
+      Markow Entscheidungsprozesse
+      Policy Evaluiuerung und Ableitungs von
+       optimalen Kontrolfunktionen
+      Lösungen mittels dynamischer Programmierung
+
+Modelfrei Ansätze zur Planung
+   Monte-Carlo Lernen
+   Temporal Difference Learning
+   Modelfreies Lernen von Policies
+   On-Policy und Off-Policy Methoden
+
+Value Function Approximation:
+    Zustands- und Beobachtungssräume
+    Approximation der Value Function mittels
+       maschinellem Lernen
+    Monte-Carlo Lernen mit
+       Funktionsapproximation
+    Temporal Difference Learning mit
+       Funktionsapproximation
+
+Policy Gradienten:
+     Stochastische Policies
+     Monte-Carlo Policy Gradient Methoden
+     Actor-Critic Methoden
+     Kompatible Funktionsapproximationen
+
+Wissensgraphen:
+    Wissensgraphen und Ontologien
+    Lernen auf Wissensgraphen
+    Ansätze mit Tensorfaktorisierung
+    Ansätze mit Graph-Embeddings
+
+Fundamentals of Machine Learning with Neural
+Networks:
+• basic function blocks
+• loss functions
+• evaluation Methods
+
+Training of neural networks:
+• optimization methods
+• computational graph
+• gradients and gradient descent
+• backpropagation
+• adaptive learning rates
+• weight initialization
+• regularization
+• hyper parameter tuning
+Convolutional Neural Networks:
+• convolutional layers
+• batch normalization and dropout
+• pooling operations
+• common architectures in image processing
+
+Recurrent neural networks:
+• sequence modeling
+• backpropagation-through-time networks
+• exploding and vanishing gradients
+• architectures with gating
+• attention mechanisms
+
+Bayesian Deep Learning:
+• connection of neural networks and Bayesian learning
+• types of model uncertainty
+• epistemic or aleatory uncertainty
+• integration of uncertainty into neural networks
+
+Representation Learning:
+• embedding spaces
+• auto-encoder
+• restricted Boltzmann machines
+• metric learning
+
+Deep Learning Tools:
+• hardware platforms
+• software frameworks
+• distributed training
+• model deployment
+
+Generative models:
+• neural networks for distribution modeling
+• variational autencoders
+• generative adversarial networks
+• applications
+
+Sequential decision problems:
+• deterministic and undeterministic planning problems
+• Markov decision processes
+• policy evaluation and derivation of optimal control
+functions
+• solutions using dynamic programming
+
+Model free approaches to planning
+• Monte Carlo learning
+• temporal difference Learning
+• model-free learning of policies
+• on-policy and off-policy methods
+              Value Function Approximation:
+              • state and observation spaces
+              • approximation of the value function with machine
+              learning
+              • Monte Carlo learning with function approximation
+              • temporal difference learning with function
+              approximation
+
+              Policy Gradients:
+              • stochastic policies
+              • Monte Carlo policy gradient methods
+              • Actor-Critic methods
+              • compatible function approximations
+
+              Knowledge graph:
+              • knowledge graphs and ontologies
+              • learning on knowledge graphs
+              • tensor factorization approaches
+              • approaches with graph embeddings
+
+Prüfung       Prüfungsleistung (benotet):
+              -Klausur: 90-180 min
+
+              Wiederholungsklausur zu Ende des Semesters.
+              Details werden zu Beginn des Moduls bekannt gegeben.
+
+              In der Klausur weisen die Studierenden nach, inwieweit
+              sie die vorgestellten Prozesse, Modelle und Verfahren
+              verstanden haben, komprimiert wiedergeben und
+              anwenden sowie auf verwandte Problemstellungen
+              übertragen können. In der Klausur werden 7 bis 10
+              Aufgaben gestellt, die eine eigenständige Anwendung
+              der Prozessdefinition, Modelle und Verfahren aus der
+              Vorlesung erfordern
+Examination   Examination requirements (graded):
+              - written exam: 90-180 min
+
+              A makeup exam will be offered at the end of the
+              semester, details will be announced at the beginning of
+              the course.
+
+              Within the written exam, students demonstrate that they
+              understand the presented processes, models, and
+              methods, that they can reproduce and apply them as
+              well as that they can transfer and extend models and
+              methods to similar problems. The written exam consist
+              of 7 to 9 assignments, which require independent
+              application of process definitions, models, and methods
+                        presented in the lecture.
+Literatur/Literature         Ian Goodfellow, Yoshua Bengio, and Aaron
+                                Courville. 2016. Deep Learning. The MIT Press.
+                             Richard S. Sutton and Andrew G. Barto. 2018
+                                Introduction to Reinforcement Learning (2nd ed.).
+                                MIT Press, Cambridge, MA, USA,
+Medienformen            Beamer-Präsentation, Tafelpräsentation, Handout
+Media                   slides show, blackboard presentation, handouts
+Lehr- und Lernmethode   Vorlesung, Übung, Aufgaben zum Selbststudium.
+                        Das Modul besteht aus einer Vorlesung und Übungen in
+                        kleinen Gruppen (als Tutorübungen).
+                        In den Hausaufgaben, die freiwillig abzugeben sind,
+                        analysieren die Studierenden die in der Vorlesung
+                        vorgestellten Prozesse, Modelle und Verfahren, wenden
+                        diese auf konkrete Daten an und erweitern diese für
+                        ähnliche Problemstellungen. In den Hausaufgaben
+                        werden selbständig anspruchsvolle Übungsaufgaben
+                        bearbeitet, die ähnlich zu den Klausuraufgaben sind
+                        (siehe oben) und daher zur Vorbereitung darauf dienen.
+                        In der Übung werden mögliche Lösungsstrategien
+                        diskutiert.
+
+Teaching and Learning   Lecture, tutorial, assignments for individual study.
+Methods                 Within the assignments (the submission is optional)
+                        students analyze the processes, models, and methods
+                        presented in the corresponding lectures, apply them to
+                        real data, and extend these to similar problems. The
+                        assignments consist of demanding problems similar to
+                        the assignments in the written exam (for details see
+                        above) and serve as a preparation for the exam. Within
+                        the tutorials possible approaches for solutions of the
+                        assignments will be discussed.
+
+Turnus                  Wintersemester
+Modulverantwortlicher   Prof. Dr. Matthias Schubert
+Dozenten                Prof. Dr. Matthias Schubert
+

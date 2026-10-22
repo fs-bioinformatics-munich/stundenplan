@@ -1,0 +1,169 @@
+Fortgeschrittenenpraktikum
+Bioinformatik (IN5073)
+Title               Advanced Lab Course Bioinformatics
+Typ                 Praktikum Lab course
+Credits             12
+Lehrform/SWS        6 Pr
+Sprache             Deutsch/Englisch
+Modulniveau         Master
+Arbeitsaufwand      Präsenzstunden                 90 Stunden
+                    Eigenstudium                   270 Stunden
+                    Gesamtaufwand                  360 Stunden
+Angestrebte         Nach der Teilnahme am Modul sind die Studierenden
+Lernergebnisse      in der Lage, im Rahmen eines konkreten
+                    wissenschaftlichen Teilprojekts (innerhalb eines
+                    grö ßeren Forschungsprojekts) aktuelle
+                    bioinformatische Methoden und Werkzeuge (wie z.B.
+                    fü r Proteinstruktur- und -sequenzanalyse, fü r
+                    Expressionsdatenauswertung, fü r
+                    Netzwerkuntersuchungen, fü r Sequenzierungs- oder
+                    Massenspektrometriedaten oder fü r
+                    systembiologische Techniken) auf forschungsnahe
+                    Problemstellungen geeignet auszuwä hlen, zu
+                    bewerten und anzuwenden bzw. auf die konkrete
+                    Fragestellung anzupassen. Weiterhin kö nnen sie eine
+                    klar umrissene wissenschaftliche Problemstellung
+                    zielgerichtet bearbeiten, die entsprechenden
+                    Programme erstellen und die Ergebnisse
+                    abschließend im Stil einer wissenschaftlichen
+                    Publikation zusammenfassen und prä sentieren.
+Intended Learning   After the successful participation, students are able
+Outcomes            to select, to evaluate, to apply, to adapt or to extend
+                    state- of-the-art bioinformatics methods and tools
+                    (e.g., for protein structure and sequence analysis, for
+                    the interpretation of expression data, for network
+                    analysis, for sequencing and mass spec data, or
+                    systems biology techniques) and to solve research
+                    oriented tasks. In addition, they can solve a well-
+                    defined scientific task, implement the respective
+                    programs, and present the results in a
+                    comprehensive way, equivalent to a scientific
+                    publication.
+Inhalt              Der thematische Schwerpunkt des zu bearbeitenden
+                    Teilprojekts wird jeweils vom ausrichtenden
+                    Dozenten vorgegeben. Er orientiert sich an aktuellen
+           Forschungsthemen der Lehrstü hle der Bioinformatik
+           (z.B. -omics Datenanalyse, Systembiologie, Analyse
+           und Interpretation biologischer Netzwerke, Analyse
+           von Proteinstruktur- und Proteinfunktionsdaten)
+           und an aktuellen Forschungsfragestellungen der
+           Bioinformatik (z.B. der Sequenzierung des
+           menschlichen Genoms, dem Aufkommen neuer
+           Techniken wie DNA-Chips oder der neuen
+           Generation von Genom- und Transkriptom-
+           Sequenzierung und der Verö ffentlichung neuer
+           umfassender Datensä tze wie ENCODE, Epigenomics
+           Roadmap und TCGA).
+           Oft wird es um die Entwicklung einer neuen Methode
+           fü r die Analyse solcher Hochdurchsatzdaten gehen
+           oder um die detaillierte Auswertung solcher
+           Datensä tze im Kontext des aktuellen Stands der
+           Technik.
+Contents   The topic will be defined by the respective
+           responsible supervisor. It is selected from the
+           research areas of the bioinformatics research groups
+           (e.g. –omics data analysis, systems biology, analysis
+           and interpretation of biological networks, analysis of
+           protein structure and function) and from current
+           research problems in bioinformatics (such as the
+           sequencing of the human genome, the development
+           of DNA-chips or new next generation sequencing
+           techniques for genomes and transcriptomes, and the
+           availability of new comprehensive data sets such as
+           ENCODE, Epigenomics Roadmap, and TCGA).
+           Often a new method for the analysis of such high
+           throughput data will be developed or such data sets
+           will be analyzed in-depth in the context of the state-
+           of- the-art in the respective field.
+Prüfung    Die Prü fung ist eine benotete Laborleistung und
+           besteht aus mehreren Prü fungselementen (zu
+           erstellende Programme, Projektaufgaben,
+           Ausarbeitung und Prä sentation). Durch den Entwurf
+           und die Implementierung von Programmen im
+           Hinblick auf die Ziele des Teilprojekts (d.h. zur
+           Lö sung der Projektaufgaben) weisen die
+           Studierenden nach, dass sie erworbenes Wissen (wie
+           z.B. aktuelle bioinformatische Methoden) in einem
+           klar definierten Forschungsumfeld selbstä ndig
+           anwenden und umsetzen kö nnen. In den
+           abschließenden Ausarbeitungen mit Prä sentation
+           weisen die Teilnehmer nach, dass sie ihre Ergebnisse
+           wissenschaftlich darstellen und ihre Arbeit in Bezug
+           auf den aktuellen Stand der Wissenschaft bewerten
+           kö nnen.
+               Die Gesamtnote ergibt sich aus der Kombination der
+               Prü fungselemente (zu erstellende Programme bzw.
+               zu realisierende Projekte sowie Ausarbeitung mit
+               Prä sentation). Die Gewichtung der Teile fü r die
+               Gesamtnote wird jeweils zu Beginn des Moduls
+               bekannt gegeben.
+               Die Prü fung kann im Folgesemester wiederholt
+               werden.
+Exam           The exam is a graded lab exam consisting of several
+               examination elements (programs, project goals,
+               scientific report and presentation). The independent
+               application and transfer of learned knowledge (e.g.
+               state-of-the-art bioinformatics methods) can be
+               tested via the design and implementation of
+               programs with regard of the objectives of the
+               subproject (i.e., to achieve the project goals) within a
+               definite research area. In the final reports and
+               presentations the participants describe their results
+               according to scientific standards and discuss their
+               work in the context of the current state-of-the art.
+               The final grade of the module is determined from the
+               combination of the examination elements (programs
+               and projects as well as scientific reports and
+               presentation). The weighting of the respective parts
+               is fixed and communicated at the beginning of the
+               course.
+               The exam can be retaken in subsequent semester.
+Literatur       Aktuelle Fachartikel zum jeweiligen Thema
+
+Literature     Current research article on the respective topic
+Medienformen   Folienprä sentation, Computerlabor, gemeinsame
+               Diskussionen mit Betreuern der Projekte
+Media          slide show, computer lab, discussions with advisors
+Lehr- und      Rechnerpraktikum, Projekt, Prä sentation,
+Lernmethode    Kolloquium, Bericht.
+               Wä hrend des Fortgeschrittenenpraktikums gibt es
+               regelmä ßige Praktikumsbesprechungen mit
+               Kurzvorträ gen und Diskussionen mit Betreuern und
+               Themensteller, um den aktuellen Stand der eigenen
+               Arbeiten darzustellen und den Fortschritt und
+               fortfü hrende Arbeiten der Projektaufgaben zu
+               diskutieren. Im Rechnerpraktikum entwickeln die
+               Studierenden Lö sungen und implementieren diese
+               (die
+               Zeiteinteilung kann in Abhä ngigkeit des Themas im
+               Block oder in wö chentlichen Einheiten stattfinden).
+               Die Prä sentationen dienen der Darstellung und
+               Dokumentation des Fortschritts bei den
+               Projektaufgaben. Das Kolloquium prä sentiert die
+                      Ergebnisse des Projekts, fasst sie zusammen und
+                      diskutiert sie. Der Bericht beschreibt die erzielten
+                      Ergebnisse in der Form einer wissenschaftlichen
+                      Publikation, die mö glichst auch bei einem
+                      Fachjournal zur Begutachtung eingereicht wird.
+Teaching and Learning computer lab course, project, presentation,
+Methods               colloquium, report
+                      During the advanced lab course there will be
+                      meetings with short presentations and discussions
+                      on a regular basis with advisors and supervisor to
+                      present the current status of the research project
+                      and to discuss the progress and further directions of
+                      the project goals. In the computer lab course the
+                      students will realize and implement solutions for the
+                      project (depending on the research question, this
+                      course can be arranged as a block course or on a
+                      weekly basis). The presentations will present and
+                      document the progress of the project tasks. The
+                      colloquium will present, summarize, and discuss the
+                      results achieved during the project work. The report
+                      describes these results in the form of a scientific
+                      publication, which will be in the best case actually
+                      submitted to a scientific journal for peer review.
+Turnus                Winter-/ Sommersemester; on demand
+Modulverantwortlicher Prof. Dr. Burkhard Rost, Prof. Dr. Ralf Zimmer
+Dozenten              Alle Professoren der Bioinformatik
+

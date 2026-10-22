@@ -39,6 +39,32 @@ def fetch(url, kind, key, json=False, refresh=False, params=None):
     raise err
 
 
+def download(url, path, refresh=False):
+    """GET a binary file (PDF) to `path` with the politeness delay and retries; an existing file is kept unless refresh."""
+    global _last
+    path = Path(path)
+    if path.exists() and not refresh:
+        return path
+    err = None
+    for attempt in range(3):
+        wait = DELAY - (time.time() - _last)
+        if wait > 0:
+            time.sleep(wait)
+        _last = time.time()
+        try:
+            r = _session.get(url, timeout=60)
+            r.raise_for_status()
+            if not r.content.startswith(b"%PDF"):
+                raise requests.RequestException(f"{url} is not a PDF")
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(r.content)
+            return path
+        except requests.RequestException as e:
+            err = e
+            time.sleep(2 ** attempt)
+    raise err
+
+
 def get_live(url, headers=None):
     """Uncached GET on the shared session (cookies kept), with delay and retries. Returns response text."""
     global _last

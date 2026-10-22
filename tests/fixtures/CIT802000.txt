@@ -1,0 +1,200 @@
+CIT802000 Scientific
+Writing for Bioinformatics
+Titel               Wissenschaftliches Schreiben für Bioinformatik
+Title               Scientific Writing for Bioinformatics
+Typ                 Seminar
+Credits             3
+Lehrform/SWS        2S
+Sprache             Deutsch oder Englisch (wird zum Beginn der
+                    Veranstaltung bekannt gegeben)
+Modulniveau         Master
+Arbeitsaufwand      Präsenzstunden                 30 Stunden
+                    Eigenstudium                   60 Stunden
+                    Gesamtaufwand                  90 Stunden
+Angestrebte         Nach erfolgreichem Abschluss des Moduls sind die
+Lernergebnisse      Studierenden in der Lage zentrale Konventionen des
+                    Wissenschaftlichen Schreibens in der Bioinformatik
+                    und typische Strukturen und sprachliche Merkmale
+                    wissenschaftlicher Artikel zu beschreiben. Sie sind in
+                    der Lage Strategien der zielgerichteten
+                    Literatursuche zur Unterstützung wissenschaftlicher
+                    Argumentation anzuwenden und geeignete
+                    Fachliteratur korrekt in eigene Texte einzubinden
+                    und zu referenzieren. Sie können wissenschaftliche
+                    Texte hinsichtlich Aufbaus, Argumentationsführung
+                    und sprachlicher Präzision analysieren und effektive
+                    und weniger effektive Schreibstile sowie
+                    Strukturierungsansätze zu unterscheiden. Zudem
+                    sind sie in der Lage wissenschaftliche Texte kritisch
+                    zu bewerten und konstruktives, differenziertes
+                    Feedback zu Struktur, Klarheit und Argumentation
+                    zu formulieren. Sie können einen wissenschaftlichen
+                    Artikel strukturiert konzipieren, eigenständig
+                    kohärente und präzise formulierte Textabschnitte
+                    verfassen und eigene Texte iterativ auf Basis von
+                    Feedback sprachlich und strukturell überarbeiten.
+Intended Learning   Upon successful completion of the module, students
+Outcomes            will be able to describe key conventions of academic
+                    writing in bioinformatics, as well as the typical
+                    structures and linguistic features of scientific articles.
+                    They will be able to apply targeted literature search
+                    strategies to support scientific argumentation and to
+                    correctly incorporate and cite relevant academic
+                    literature in their own texts. They can analyze
+                    scientific texts in terms of structure, line of
+                    argumentation, and linguistic precision, and
+         distinguish between effective and less effective
+         writing styles as well as structuring approaches. In
+         addition, they are able to critically evaluate scientific
+         texts and formulate constructive, nuanced feedback
+         on structure, clarity, and argumentation. They can
+         design a scholarly article in a structured manner,
+         independently compose coherent and precisely
+         formulated text sections, and iteratively revise their
+         own texts linguistically and structurally based on
+         feedback.
+Inhalt   Dieses Seminar vermittelt zentrale Kompetenzen des
+         wissenschaftlichen Schreibens am Beispiel aktueller
+         Fragestellungen aus der Bioinformatik. Im Fokus
+         steht dabei der methodische Prozess der
+         Generierung, Analyse und Kommunikation
+         wissenschaftlicher Erkenntnisse. Ausgehend von
+         einem konkreten bioinformatischen Thema (z. B.
+         RNA-seq Read Alignment) erlernen die Studierenden
+         systematische Strategien der Literatursuche. Dabei
+         wird besonderer Wert auf den Rechercheprozess
+         gelegt und der kritischen Bewertung der gefundenen
+         Quellen. Ein weiterer Schwerpunkt liegt auf der
+         strukturellen und sprachlichen Analyse
+         wissenschaftlicher Publikationen. Die Studierenden
+         untersuchen ausgewählte Artikel hinsichtlich ihres
+         Aufbaus (Einleitung, Methoden, Ergebnisse,
+         Diskussion, Fazit), identifizieren wiederkehrende
+         Elemente sowie typische Argumentations- und
+         Formulierungsmuster und reflektieren Unterschiede
+         zwischen verschiedenen Publikationen. Darauf
+         aufbauend wird der Peer-Review-Prozess praxisnah
+         eingeübt. Anhand veröffentlichter Arbeiten sowie
+         Preprints (z. B. von bioRxiv) lernen die Studierenden,
+         wissenschaftliche Beiträge kritisch zu begutachten
+         und konstruktives Feedback zu formulieren.
+         Im weiteren Verlauf entwickeln die Teilnehmenden
+         eigenständig die Struktur eines wissenschaftlichen
+         Artikels zu einer fiktiven bioinformatischen Methode.
+         Dabei werden zentrale Anforderungen an Inhalt und
+         Gliederung erarbeitet und schrittweise umgesetzt.
+         Beginnend mit der Einleitung verfassen die
+         Studierenden einzelne Abschnitte ihres Artikels und
+         wenden dabei die zuvor analysierten Struktur- und
+         Sprachprinzipien an. Dies wird begleitet durch eine
+         wechselseitige Begutachtung der studentischen
+         Arbeiten im Rahmen eines Peer-Review-Verfahrens,
+         wodurch sowohl die Fähigkeit zur kritischen
+         Evaluation als auch zur Überarbeitung eigener Texte
+         weiter gestärkt wird.
+Contents      This seminar teaches key skills in scientific writing
+              using current topics in bioinformatics as examples.
+              The focus is on the methodological process of
+              generating, analyzing, and communicating scientific
+              findings. Starting with a specific bioinformatics topic
+              (e.g., RNA-seq read alignment), students learn
+              systematic strategies for conducting literature
+              searches. Particular emphasis is placed on the
+              research process and the critical evaluation of the
+              sources found. Another focus is on the structural and
+              linguistic analysis of scientific publications. Students
+              examine selected articles in terms of their structure
+              (introduction, methods, results, discussion,
+              conclusion), identify recurring elements as well as
+              typical patterns of argumentation and phrasing, and
+              reflect on differences between various publications.
+              Building on this, the peer-review process is practiced
+              in a practical setting. Using published works and
+              preprints (e.g., from bioRxiv), students learn to
+              critically evaluate scientific contributions and
+              formulate constructive feedback.
+              Participants will then independently develop the
+              structure of a scientific article on a fictional
+              bioinformatics method. In doing so, they identify key
+              requirements for content and organization and
+              implement them step by step. Starting with the
+              introduction, students write individual sections of
+              their article, applying the structural and linguistic
+              principles they analyzed earlier. This is accompanied
+              by a peer review of the students’ work, which further
+              strengthens both their ability to critically evaluate
+              and to revise their own texts.
+Prüfung       Präsentation (Kurzvorträge im Seminar), Diskussion
+              und schriftliche Ausarbeitung.
+
+              Die Benotung erfolgt auf Basis der Vorträge und der
+              Beteiligung an der Diskussion im Seminar sowie der
+              zugehörigen Ausarbeitung. Die genaue Gewichtung
+              wird zu Beginn des Moduls bekannt gegeben.
+
+              In den Vorträgen und Diskussion weisen die
+              Studierenden nach, dass sie sich in die behandelten
+              Aspekte des wissenschaftlichen Schreibens
+              eingearbeitet haben. Mit der Ausarbeitung weisen sie
+              nach, dass sie die erlernten Konzepte des
+              wissenschaftlichen Schreibens umsetzen können.
+Examination   Presentation (short presentations in the seminar),
+              discussion, and written assignment.
+                        Grades are based on the presentations and
+                        participation in the seminar discussion, as well as the
+                        accompanying written assignment. The exact
+                        weighting will be announced at the beginning of the
+                        module.
+
+                        In the presentations and discussions, students
+                        demonstrate that they have familiarized themselves
+                        with the aspects of academic writing covered in the
+                        course. Through the written assignment, they
+                        demonstrate that they can apply the concepts of
+                        academic writing they have learned.
+Literatur               Aktuelle Fachartikel und Preprints aus der
+                        Bioinformatik
+Literature              Current articles and preprints on bioinformatics
+Medienformen            Folienpräsentation
+Media                   slide show
+Lehr- und Lernmethode   Seminarvortrag, Einzel- und Gruppenarbeit
+
+                        Das Modul wird in wöchentlichen Seminarsitzungen
+                        (2S) durchgeführt. Die Studierenden präsentieren
+                        hierbei in Kurzvorträgen ihre in Einzel- oder
+                        Gruppenarbeit erarbeiten Ergebnisse und Strategien
+                        zu Literatursuche, Analyse und Peer-Review
+                        wissenschaftlicher Arbeiten und Strukturierung und
+                        Überarbeitung ihres zu entwickelndem Artikel. Auf
+                        dieser Grundlage diskutieren die Studierenden
+                        anschließend ihre Erkenntnisse und potentielle
+                        Unterschiede in ihren Beobachtungen. Die
+                        Seminarsitzungen sind dabei in thematische Blöcke
+                        unterteilt, welche aufeinander aufbauen. Die
+                        schriftliche Ausarbeitung, welche in Form eines
+                        Artikels zu einer fiktionalen bioinformatischen
+                        Methode erstellt wird, soll durch praktische
+                        Anwendung das erlernte einüben und verfestigen.
+
+Teaching and Learning   Seminar presentations, individual and group work
+Methods
+                        The module is conducted in weekly seminar sessions
+                        (2S). During these sessions, students present the
+                        results and strategies they have developed through
+                        individual or group work in short presentations.
+                        These cover literature searches, the analysis and
+                        peer review of academic papers, and the structuring
+                        and revision of the article they are developing. Based
+                        on this, students then discuss their findings and
+                        potential differences in their observations. The
+                        seminar sessions are divided into thematic blocks
+                        that build upon one another. The written assignment,
+                        which takes the form of an article on a fictional
+                        bioinformatics method, is intended to reinforce and
+                        consolidate what has been learned through practical
+                        application.
+Turnus                  Jährlich (Wintersemester; bei Bedarf zusätzlich oder
+                        alternativ auch im Sommersemester)
+Modulverantwortlicher   Prof. Dr. Caroline Friedel
+Dozenten                Prof. Dr. Caroline Friedel
+

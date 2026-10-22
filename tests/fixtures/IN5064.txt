@@ -1,0 +1,69 @@
+Biochemie V - Lebenzyklus der
+Proteine (IN5064)
+Title               Biochemistry V - Life cycle of proteins
+Typ                 Vorlesung
+Credits             3
+Lehrform/SWS        Vorlesung, 2 SWS
+Sprache             Deutsch / Englisch
+Modulniveau         Master
+Arbeitsaufwand      Präsenzstunden                  30 Stunden
+                    Eigenstudium                    60 Stunden
+                    Gesamtaufwand                   90 Stunden
+Angestrebte         Die Studierenden verstehen den Lebenszyklus der
+Lernergebnisse      Proteine von ihrer Synthese bis zum Abbau. Sie können
+                    die verschiedenen Phasen wie Faltung, Modifikation,
+                    Sortierung und Abbau unterscheiden und kennen die
+                    Besonderheiten jeder Phase. Sie sind mit dem Stand
+                    der Wissenschaft auf diesem Gebiet vertraut.
+Intended Learning   The students understand the life cycle of proteins from
+Outcomes            their synthesis up to their degradation. They can
+                    distinguish between the different stages like folding,
+                    modification, sorting and degradation and know the
+                    peculiarities of each phase. They are familiar with the
+                    state-of-the-art in this field.
+
+Inhalt              This lecture course covers the life cycle of proteins
+                    from their birth and maturation to adult life and death.
+                    We focus on protein folding, modification, sorting, and,
+                    finally, degradation by proteases. Throughout the
+                    course, we connect these topics to ongoing research at
+                    the Gene Center and at the MPI of Biochemistry and
+                    discuss their relationship to protein-based diseases
+                    and their potential for medical application.
+
+Contents            This lecture course covers the life cycle of proteins
+                    from their birth and maturation to adult life and death.
+                    We focus on protein folding, modification, sorting, and,
+                    finally, degradation by proteases. Throughout the
+                    course, we connect these topics to ongoing research at
+                    the Gene Center and at the MPI of Biochemistry and
+                    discuss their relationship to protein-based diseases
+                    and their potential for medical application.
+
+Prüfung             Das Modul wird durch eine Prüfungsleistung
+                    abgeschlossen.
+                        Prüfungstyp: schriftlich
+                        Dauer: 90 Minuten
+
+                        Mit der Klausur wird geprüft, inwieweit die
+                        Studierenden Lebenszyklus der Proteine und seine
+                        verschiedenen Phasen verstanden haben und dieses
+                        Wissen komprimiert auch unter zeitlichem Druck
+                        wiedergeben können.
+
+                        Die Prüfung kann im folgenden Jahr wiederholt
+                        werden.
+
+Literatur               Wird in der Vorlesung bekannt gegeben
+Literature
+Medienformen            Powerpoint-Präsentation, Tafelanschrieb
+Media                   slide-show, black board
+Lehr- und               Vorlesung
+Lernmethode
+Teaching and Learning   lecture
+Methods
+Turnus                  WS, jährlich
+
+Modulverantwortlicher
+Dozenten              Prof. Beckmann
+

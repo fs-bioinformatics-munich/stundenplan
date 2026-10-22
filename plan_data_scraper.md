@@ -212,3 +212,21 @@ Result:
 - **Changes in existing courses:** two lectures got their dates: *Fortgeschrittene Datenverarbeitungs- und Visualisierungstechniken* (IN2379, Friday 10-12) and *Protein Prediction II for Bioinformaticians* (IN2230, Tuesday 16-18 and Thursday 14-16); courses without dates 8 -> 7. Registration of *Künstliche Intelligenz in der Medizin I* and both *Multiomics Profiling for Microbiome Data* courses changed from open (RUNNING) to expired. Eight language courses and *Data Ethics in Practice* changed their slots.
 - Unit tests 25 and e2e pass on the new data.
 - Lesson: slots and registration states change during the first semester weeks, so the crawl must be repeated before publishing (see the update note in `plan_web_app.md`).
+
+## CIT module descriptions from PDFs (2026-10-22)
+
+The FPSO 2026 tables of the CIT Modulkatalog link 22 of their 78 modules (mostly LMU modules, plus CIT802000 Wissenschaftliches Schreiben) to a module description **PDF** on cit.tum.de instead of a TUMonline module page. They have no TUMonline course and no dates.
+
+**Pipeline** (`python3 build_cit_modules.py [--refresh]`, needs `pdftotext`):
+1. `tum.cit_modules.find_pdf_modules(html)`: the four elective tables of the cached page; rows whose name links to a `.pdf` give module number, name, catalog (table), table credits and the absolute PDF URL.
+2. `tum.http.download` saves each PDF to `data/cit_modules/<module>.pdf` (kept unless `--refresh`; polite delay, retries, checks the `%PDF` header).
+3. `tum.cit_modules.parse_module_pdf(text)` reads the key/value table (`pdftotext -layout`) into `fields` (every key as written, e.g. `Inhalt`, `Intended Learning Outcomes`, `Prüfung`) and the normalized fields title, type, credits, teaching form, language, level, workload (contact/self-study/total hours), turnus, responsible, lecturers.
+4. Output `data/cit_modules.json` (rewritten on every run) and `data/cit_modules.csv` (merged view for checking by hand).
+5. **Hand corrections:** `data/cit_modules_manual.json`, e.g. `{"IN5022": {"turnus": "Wintersemester", "credits": 9}}` (field names as in the CSV header; `null` clears a value). It is never overwritten; `tum.cit_modules.merge_manual` lays it over the scraped data, lists the corrected fields in `manual_fields`, and a correction for an unknown module number is an error. The script prints which of credits/turnus/lecturers/type a PDF did not contain.
+6. `export_data.py` adds `cit_modules` to `schedule.json` (`tum.cit_modules.export_records`). Counted credits: hand correction > the value already resolved for the module (FPSO > handbook > website table) > website table > description PDF. The description PDF counts as a fourth credit source; any disagreement sets `credits_conflict`. Catalog: the resolved catalog of the module if it is in the SPO list, else the table's. The raw `fields` (outcomes, contents, literature) are not exported to the page; they stay in `data/cit_modules.json`.
+
+**Layout variants met in the 22 PDFs** (each has a fixture and a test): keys wrapped over two lines (`Angestrebte` / `Lernergebnisse`), also when the second line has no value (`Lehr- und` / `Lernmethode`); long keys followed by one space only (`Modulverantwortlicher Prof. ...`); empty values; keys indented by one space under a title at column 0; `Lehrform / SWS` with spaces; hours written `60 h`; `Häufigkeit` instead of `Turnus`; credits as `6 ECTS`; value column shifted between pages.
+
+**Result of the first run:** 22 modules, credits identical to the website table for all 22 (no credit conflict), turnus for 22 (IN5021 uses `Häufigkeit`), no field missing in any PDF.
+
+**Tests** (stdlib `unittest`, no new dependency): `python3 -m unittest discover -s tests -t .` (`tests/__init__.py` makes the folder importable); fixtures in `tests/fixtures/` (text of 8 PDFs from `pdftotext -layout`, the 5 table fragments of the Modulkatalog page). 27 tests over four seams: link finding, PDF parsing, hand-correction merge, export records. Not tested: download and `pdftotext` themselves. The PDF layouts differ per author, so a new PDF version can break the parser; the script prints missing fields and the hand file is the fallback.

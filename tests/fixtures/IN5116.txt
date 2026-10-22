@@ -1,0 +1,191 @@
+Perlen der Bioinformatik: Algorithmen
+(IN5116)
+Title               Bioinformatics Pearls: Algorithmics
+Typ                 Vorlesung mit Übungen
+Credits             9
+Lehrform/SWS        4V + 2Ü
+Sprache             English
+Modulniveau         Master
+Arbeitsaufwand      Präsenzstunden               90 Stunden
+                    Eigenstudium                 180 Stunden
+                    Gesamtaufwand                270 Stunden
+Angestrebte         Die Studierenden verstehen wichtige algorithmische
+Lernergebnisse      Konzepte und Techniken (z.B. Kombinatorische
+                    Optimierung, Graphalgorithmen, randomisierte
+                    Verfahren, Monte-Carlo Methoden, Approximation)
+                    und können sie praktisch auf aktuelle Fallbeispiele und
+                    Problemstellungen der Bioinformatik (wie
+                    Proteinstrukturvorhersage, Sequenzanalyse,
+                    Interpretation von Sequenzierungs- und
+                    Massenspektrometriedaten, genregulatorische
+                    Netzwerke) anwenden. Studierende können
+                    Algorithmen für die oben genannten Techniken und
+                    ihre Anwendungen auf Bioinformatikprobleme
+                    analysieren und verstehen die dazu notwendigen
+                    formalen Techniken. Studierende können
+                    algorithmische Prinzipien für neue Bioinformatik
+                    Probleme und Daten identifizieren und anpassen.
+
+Intended Learning   Students understand important algorithmic concepts
+Outcomes            and techniques (e.g., combinatorial optimization, graph
+                    algorithms, randomized methods, Monte Carlo
+                    methods, approximations) and are able to apply them
+                    to practical case studies and problems in
+                    bioinformatics (such as protein structure prediction,
+                    sequence analysis, interpretation of sequencing and
+                    mass spectrometry data, gene regulatory networks).
+                    Students are able to practically analyze those
+                    algorithms and its applications to Bioinformatics
+                    problems and they understand the required formal
+                    techniques. Students are able to identify and adapt
+                    fundamental algorithms for new bioinformatics
+                    problems and data.
+
+Inhalt              Das Modul behandelt ausgewählte fortgeschrittene
+                    Themen (‚Perlen’) der algorithmischen Bioinformatik
+           in jeweils in sich abgeschlossenen Vorlesungen.
+           Mögliche Themen sind:
+                Kombinatorische Optimierung
+                Graphentheorie und Algorithmen
+                Monte-Carlo Methoden
+                Approximation
+                Randomisierte Algorithmen
+                Netzwerkinferenz
+                Statistisches Lernen
+                Data mining
+                Bayes’sche Netzwerke
+                Graphische Modelle
+                Petri-Netze
+                Spieltheorie
+                Evolutionäre Dynamik
+                Phylogenetische Bäume und Netzwerke
+                Next generation sequencing
+                Expressionsdatenanalyse
+                Computational proteomics.
+           Die Auswahl der Themengebiete obliegt dem
+           jeweiligen Dozenten.
+
+Contents   The module treats selected advanced topics (‘pearls’)
+           of algorithmic bioinformatics in self-contained lectures
+           Possible topics are:
+                Combinatorial optimization
+                Graph theory and algorithms
+                Monte-Carlo methods
+                Approximation
+                Randomized algorithms
+                Network inference
+                Statistical learning
+                Data mining
+                Bayesian networks
+                Graphical models
+                Petri nets
+                Game theory
+                Evolutionary Dynamics
+                Phylogenetic trees and networks
+                Next generation sequencing
+                Expression analysis
+                Computational proteomics.
+           The selection of the topics is decided by the lecturer.
+
+Prüfung    Prüfungsleistung (benotet):
+           -Klausur: 120 min
+        Wiederholungsklausur zu Ende des Semesters. Details
+        werden zu Beginn des Moduls bekannt gegeben.
+
+        In der Klausur weisen die Studierenden nach,
+        inwieweit sie die in der Vorlesung vorgestellten
+        Problemstellungen der Bioinformatik und die dazu
+        gehörigen Lösungsansätze und Modellierungen sowie
+        die algorithmische Konzepte und Techniken verstehen
+        und komprimiert in begrenzter Zeit wiedergeben
+        können. Algorithmische Techniken, ihre Anwendungen
+        und ihre formale Analyse werden durch entsprechende
+        Aufgaben in der Klausur geprüft. Für konkrete
+        Problemstellungen weisen die Studierenden nach, dass
+        sie die algorithmischen Konzepte identifizieren,
+        praktisch anwenden, anpassen und analysieren
+        können.
+        In der Klausur werden 4-7 Aufgaben bearbeitet, die
+        eine eigenständige Anwendung der algorithmischen
+        Konzepte und Modelle aus der Vorlesung zur Lösung
+        einer anspruchsvollen Problemstellung erfordern( wie
+        z.B. die Lösung eines kombinatorischen
+        Optimierungsproblems oder die Inferenz von
+        Netzwerkmodellen), die Skizzierung einer Beweisidee
+        (wie z.B. die Korrektheit eines Algorithmus oder die
+        Konvergenz eines Verfahrens), die Modellierung eines
+        biologischen Systems (wie z.B. genregulatorische
+        Netzwerke, Expressionsdaten, phylogenetische
+        Stammbäume) oder die Analyse eines Algorithmus
+        (wie z.B. ein Greedy- oder ein randomisiertes
+        Verfahren oder eine Monte Carlo Methode).
+
+Exams   Exam (graded):
+        -written exam: 120 min
+
+        The exam can be repeated at the end of the term.
+        Details will be published at the start of the module.
+
+        Within the written exam, the students demonstrate
+        that they are able to reproduce the bioinformatics
+        problems, the respective models and the proposed
+        solutions (presented in the lectures) as well as
+        algorithmic concept and techniques in a condensed
+        form within limited time. Algorithmic techniques and
+        their formal analysis will be examined via respective
+        problems in the written exam. For specific tasks
+        students need to identify algorithmic concepts and
+        demonstrate that they can practically apply, adapt and
+        analyze them.
+                        In the exam students solve 4-7 problems, which
+                        require an independent application of algorithmic
+                        concepts and models from the lecture to address a
+                        difficult task (i.e., the solution of a combinatorial
+                        optimization problem or the inference of a network
+                        model), the sketch of a formal proof (i.e., the
+                        correctness of an algorithm or the convergence of a
+                        method), the modeling of a biological system (e.g., a
+                        gene regulatory network, expression data, phylogenetic
+                        trees) or the analysis of an algorithm (e.g., a Greedy or
+                        randomized method, or a Monte-Carlo approach).
+
+Literatur               A.K.Dewdney, New Turing Omnibus: 66 Excursions in
+                        Computer Science, Freemann & Co Ltd, 1993.
+
+Literature              A.K.Dewdney, New Turing Omnibus: 66 Excursions in
+                        Computer Science, Freemann & Co Ltd, 1993.
+
+Medienformen            Folienpräsentation, Tafelanschrieb
+Media                   slide show, blackboard
+Lehr- und               Vorlesung, Tutorübung, Aufgaben zum Selbststudium.
+Lernmethode             In den Hausaufgaben, die freiwillig abzugeben sind,
+                        wird das Verständnis der Konzepte und Algorithmen
+                        (die in der Vorlesung vorgestellt wurden) anhand
+                        konkreter Daten und Beispiele vertieft. Die
+                        Studierenden entwerfen mithilfe der in der Vorlesung
+                        vorgestellten Konzepte Algorithmen und Modelle für
+                        neue Probleme. In den Hausaufgaben werden
+                        selbständig anspruchsvolle Übungsaufgaben
+                        bearbeitet, die ähnlich wie die Klausuraufgaben (siehe
+                        oben) sind und deshalb zur Vorbereitung darauf
+                        dienen.
+                        In den Übungen werden mögliche Lösungsansätze der
+                        Aufgaben zum Selbststudium diskutiert.
+
+Teaching and Learning   Lecture, tutorial, assignments for individual study.
+Methods                 Within the assignments (submission is optional)
+                        concepts and algorithms (presented in the lecture) will
+                        be applied to real data and examples to deepen the
+                        understanding. The students develop new algorithms
+                        and models based on the presented concepts. The
+                        assignments consist of demanding problems similar to
+                        the assignments in the written exam (for details see
+                        above) and serve as a preparation for the written exam.
+                        Within the tutorials possible approaches for the
+                        solution of the considered problems will be discussed
+                        for in-depth self study.
+
+Turnus                  Unregelmäßig
+Modulverantwortlicher Prof. Dr. Ralf Zimmer
+Dozenten              Prof. Dr. Ralf Zimmer
+
