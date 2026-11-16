@@ -230,3 +230,12 @@ The FPSO 2026 tables of the CIT Modulkatalog link 22 of their 78 modules (mostly
 **Result of the first run:** 22 modules, credits identical to the website table for all 22 (no credit conflict), turnus for 22 (IN5021 uses `Häufigkeit`), no field missing in any PDF.
 
 **Tests** (stdlib `unittest`, no new dependency): `python3 -m unittest discover -s tests -t .` (`tests/__init__.py` makes the folder importable); fixtures in `tests/fixtures/` (text of 8 PDFs from `pdftotext -layout`, the 5 table fragments of the Modulkatalog page). 27 tests over four seams: link finding, PDF parsing, hand-correction merge, export records. Not tested: download and `pdftotext` themselves. The PDF layouts differ per author, so a new PDF version can break the parser; the script prints missing fields and the hand file is the fallback.
+
+## Re-scrape (2026-11-16)
+
+`scrape.py --refresh`, `build_catalog.py --refresh`, `build_cit_modules.py --refresh`, `export_data.py` (all exit 0). Compared with the data of 2026-10-22:
+- **New:** lecture *Machine Learning for Human Genetics* (CIT423019, Thursday 14:00-15:30, 6 credits, Methoden und Forschung, registration open) and *Exercise - Machine Learning for Human Genetics* (type PR, so it is a practical, not an exercise: it does not appear under the lecture's Show exercises). Courses 124 -> 126, lectures 26 -> 27. The module CIT423019 now has a handbook entry (catalog `methods`, 6 credits, Wintersemester) and left the "not in the SPO module list" list.
+- **Registration:** 76 courses changed from open to expired (almost all language courses, plus the Computational Neuroscience Ringvorlesung and two seminars).
+- **Dates:** 19 non-lecture courses changed slots; no lecture changed. In the exercise for Mathematical Models in Biology, groups 1 and 4 lost their dates (now "without dates"), groups 2 and 3 kept theirs. Arabisch A1.1 got a third lecturer. Courses without dates: 7 (unchanged).
+- **Catalogs and credits:** no change; the only credit discrepancy is still WZ2439 (handbook 5, PDF and website 6). The 22 CIT module PDFs are byte-identical (no change in `data/cit_modules/`, no change in the exported module data).
+- Unit tests (34), Python tests (27) and e2e pass on the new data.

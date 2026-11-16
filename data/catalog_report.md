@@ -2,7 +2,7 @@
 
 Precedence for catalog and credits: **regulation PDF (up to date) > handbook > website (FPSO 2026)**.
 
-PDF: 50 modules, website: 77 modules, handbook (SPO 20261): 248 modules with a catalog path.
+PDF: 50 modules, website: 77 modules, handbook (SPO 20261): 249 modules with a catalog path.
 
 ## Disagreements between sources
 
@@ -10,7 +10,7 @@ PDF: 50 modules, website: 77 modules, handbook (SPO 20261): 248 modules with a c
 
 ## In PDF or website but not in the SPO 20261 module list (no courses can be shown)
 
-CH0156, CIT423014, CIT423019, CIT802000, IN5176
+CH0156, CIT423014, CIT802000, IN5176
 
 ## In a handbook catalog but in neither PDF nor website (category from handbook only)
 
